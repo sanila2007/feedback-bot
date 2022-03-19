@@ -2,8 +2,7 @@
 #You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
 # ##Credits - [Sanila-Assistant-Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
 
-
-# Changing the code is not allowed! Read : https://github.com/sanila2007/Sanila-Assistant-Bot/blob/mai/LICENSE
+# Changing the code is not allowed! Read GNU General Public License v3.0: https://github.com/sanila2007/Sanila-Assistant-Bot/blob/mai/LICENSE
  
 import os
 import pyrogram

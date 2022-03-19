@@ -7,7 +7,7 @@ bot = Client(
     "bot",
     api_id=7263889,
     api_hash="89c452ed35062d2d31922e6d8d069c90",
-    bot_token="2031117879:AAG5kJt7xsyMkD8EPcep9TVjXyqoFcgcTiA"
+    bot_token="2061542733:AAHQygSAwGCppBx_LJIsEA7pPF8QAv2UM0k"
 )
 
 START_MESSAGE = "**Sanila's Assistant Bot**\n\n🙋‍♂Hello, This is Sanila's Telegram Assistant bot™. **Click /help for more settings**\n\n" \

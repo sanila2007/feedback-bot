@@ -3,9 +3,7 @@
 # ##Credits - [Sanila-Assistant-Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
 
 
-
-
-# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/LICENSE
+# Changing the code is not allowed! Read : https://github.com/sanila2007/Sanila-Assistant-Bot/blob/mai/LICENSE
  
 import os
 import pyrogram
@@ -14,9 +12,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyb
 
 bot = Client(
     "bot",
-    api_id=7263889,
-    api_hash="89c452ed35062d2d31922e6d8d069c90",
-    bot_token="2061542733:AAHQygSAwGCppBx_LJIsEA7pPF8QAv2UM0k"
+    api_id=1234566,
+    api_hash="rjrjdhsj2u3382jrnfndn",
+    bot_token="206rhrhej733:AAHQjrjejwjsjJIsEA7pPF8QAv2UM0k"
 )
 
 START_MESSAGE = "**Sanila's Assistant Bot**\n\n🙋‍♂Hello, This is Sanila's Telegram Assistant bot™. **Click /help for more settings**\n\n" \

@@ -144,7 +144,7 @@ REPLY_MESSAGE = "Hello dear, You can ue this bot to✨,\n\n" \
 
 
 @bot.on_message(filters.command("help"))
-def greet(bot, message):
+def command2(bot, message):
     text = REPLY_MESSAGE
     reply_markup = ReplyKeyboardMarkup(REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
     message.reply(

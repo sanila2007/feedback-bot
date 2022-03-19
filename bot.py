@@ -1,3 +1,12 @@
+#Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
+#You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
+# ##Credits - [Sanila-Assistant-Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
+
+
+
+
+# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/LICENSE
+ 
 import os
 import pyrogram
 from pyrogram import Client, filters

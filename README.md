@@ -4,14 +4,14 @@
 <p align="center">
 <a href="https://python.org"><img src="http://forthebadge.com/images/badges/made-with-python.svg" alt="made-with-python"></a>
 <br>
-    <img src="https://img.shields.io/github/stars/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="Stars">
-    <img src="https://img.shields.io/github/forks/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="Forks">
-    <img src="https://img.shields.io/github/watchers/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="Watchers"> 
+    <img src="https://img.shields.io/github/stars/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Stars">
+    <img src="https://img.shields.io/github/forks/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Forks">
+    <img src="https://img.shields.io/github/watchers/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Watchers"> 
 <br>
-    <img src="https://img.shields.io/github/license/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="License">
-    <img src="https://img.shields.io/github/repo-size/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="Repository Size">
-    <img src="https://img.shields.io/github/contributors/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="Contributors">
-    <img src="https://img.shields.io/github/issues/sanila2007/Sanila-Ranatunga-Assistant-Bot?style=for-the-badge" alt="Issues">
+    <img src="https://img.shields.io/github/license/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/github/repo-size/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Repository Size">
+    <img src="https://img.shields.io/github/contributors/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Contributors">
+    <img src="https://img.shields.io/github/issues/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Issues">
 </p>  
 
 ## Config Vars

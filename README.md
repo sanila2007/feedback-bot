@@ -19,44 +19,46 @@
 2. `API_HASH` : Telegram API_ID, get it from my.telegram.org/apps
 3. `BOT_TOKEN` : A Valid Telegram Bot Token, get it from @Botfather
 
-## Commands
+
 ### Works 24/7
 
 [💖 Visit here: ](https://t.me/sanilaassistant_bot)
 
-```
-> Send the command to start the bot in telegram.
 
-  /start "To start the bot"
+## At Start...
+```
+@bot.on_message(filters.command("start") & filters.private)
+def command1(bot, message):
+    text = "Click any button from ReplyKeyboard as your choice..."
+    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS)
+    bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
+                   caption=messages.START_TEXT_CAPTION_TEXT),
+    message.reply(
+        text=text,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True
+    )
 
 ```
-```
-> Send this below command to get more information
 
-  /help "This will show you the all the functions in the bot"
-```
-```
-v0.7 (Latest version)
-More feautures coming soon...
-```
 <p align="center">
 <img src="https://telegra.ph/file/ad47e2b8735f8812359d9.jpg">
 <p>
  
-<h1>Screenshots📸(Old version)</h1>
+<h1>Screenshots📸</h1>
 
 <p align="left">
-  <img src="https://telegra.ph/file/7f57e9fc2cc1200c217fc.jpg"><br>
+  <img src="https://telegra.ph/file/7f57e9fc2cc1200c217fc.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/6a8460fa50e3c5b0e8c6c.jpg"><br>
+  <img src="https://telegra.ph/file/6a8460fa50e3c5b0e8c6c.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/80708e4d1eab1e317005d.jpg"><br>
+  <img src="https://telegra.ph/file/80708e4d1eab1e317005d.jpg" alt="Scrrenshot"><br>
    
 
   
-<ins>## Deployment Methods</ins>
+## Deployment Methods
 
 ### Heroku
 
@@ -64,48 +66,53 @@ More feautures coming soon...
     
  
 <br>
-<h3>Changelog</h3>
+    
+## Changelog
 
-🆅<b>0.7</b>
-
- - Added InlineKeyboardButtons
- - Added ReplyKeyboardButtons
- - Optimizations and minor bug fixes
-
-🆅<b>0.6</b>
-
- - Fixed errors in v0.5
- - Changed the welcome msg
- - Optimizations and bug fixes 
- 
-🆅<b>0.5</b>
- 
- - Bug fixes and optimizations
- 
-🆅<b>0.4</b>
-
- - Changed the interface
- - Minor bug fixes
- 
-🆅<B>0.3</b>
-
- - Added time (US Time)
- 
-🆅<b>0.2</b>
-
- - Changed the interface much attractive
- - What's new changed to Changelog
- - Added time
- - Minor bugs fixes
-
-🆅<b>0.1</b>
-
- - Added Some Commands
- - Made much easier to use
- - Improved Chat Facilities
+|   **Version**     |       **Release Notes**  |
+| ---------------- | ---------------------------------------- |
+| v0.6 |  ⁕Improvements in Feedback Centre |
+| |    ⁕Fixed major problem in Contact Centre |
+| |  ⁕Fixed major problem in Feedback Centre |
+| | ⁕Removed some commands |
+| |  ⁕Minor bugs fixes |
+| | ⁕Optimizations |
+| v0.5 | ⁕100% works with Inline & Reply KeyboardButtons |
+| |  ⁕Improved the feedback and bugs reporting section |
+| |  ⁕Added ability to learn how bots works using images |
+| | ⁕Added Help Centre |
+| | ⁕Added learning centre |
+| | ⁕Added Contact facility |
+| | ⁕Optimization |
+| | ⁕Minor bug fixes |
+| v0.4 |  ⁕Added InlineKeyboardButtons |
+| | ⁕ Added ReplyKeyboardButtons |
+| | ⁕Optimizations and minor bug fixes |
+| v0.3 |  ⁕Fixed errors in v0.2 |
+| | ⁕Changed the welcome msg |
+| | ⁕Optimizations and bug fixes |
+| v0.2 |  ⁕Changed the interface much attractive |
+| | ⁕What's new changed to Changelog |
+| | ⁕Minor bugs fixes |
+| v0.1 |  ⁕Added Some Commands |
+| | ⁕Made much easier to use |
+| | ⁕Improved Chat Facilities |
 
 
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 ## Credits
 - [Sanila Ranatunga](https://github.com/sanila2007)
 

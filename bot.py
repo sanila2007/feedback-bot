@@ -12,11 +12,13 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
 
+from configs import Config
+
 bot = Client(
     "bot",
-    api_id=7263889,
-    api_hash="89c452ed35062d2d31922e6d8d069c90",
-    bot_token="2031117879:AAG5kJt7xsyMkD8EPcep9TVjXyqoFcgcTiA"
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    bot_token=Config.BOT_TOKEN
 )
 
 DONE_MESSAGE = "Thanks for collaboration to make Sanila's bots much better! You will get reply to yur feedback by this bot around **48hours** till then have some patient\n"

@@ -100,8 +100,8 @@ def command1(bot, message):
 
 
 ## ⚠️ Warning
-<pre>This is under GNU General Public License v3.0. Therefore changing the code is NOT ALLOWED!!
-You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)</pre>
+This is under GNU General Public License v3.0. Therefore changing the code is NOT ALLOWED!!<br>
+You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)<br>
 
 ```
 ## 💡 Credits

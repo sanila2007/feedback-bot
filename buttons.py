@@ -1,4 +1,4 @@
-
+#Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
 
 REPORT_BUGS_BUTTONS = [
     [

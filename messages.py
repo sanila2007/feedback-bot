@@ -1,3 +1,5 @@
+#Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
+
 HELP_CENTRE_TEXT = "**Help Centre**\n\n" \
                    "√ This help centre was created to ask questions about bots or to fix your problems about those.\n\n " \
                    "√ You can ask them here and after you sent your " \

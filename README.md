@@ -20,7 +20,7 @@
 3. `BOT_TOKEN` : A Valid Telegram Bot Token, get it from @Botfather
 
 
-### Works 24/7
+## Works 24/7
 
 [💖 Visit here: ](https://t.me/sanilaassistant_bot)
 
@@ -99,29 +99,24 @@ def command1(bot, message):
 | | ⁕Improved Chat Facilities |
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-## Credits
-- [Sanila Ranatunga](https://github.com/sanila2007)
+## ⚠️ Warning
+<pre>This is under GNU General Public License v3.0. Therefore changing the code is NOT ALLOWED!!
+You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)</pre>
 
+```
+## 💡 Credits
+ 
+-[Sanila Assistant Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
+```
+<BR><BR>
+   
+> ⚠️ Note: <br><br>
+> I don't officially support forks / Clones for this assistant bot, So don't tag admins for errors your bot/deploy/code, If any error you should fix it yourself!!
+<br>
+ 
+>💖 Special Thanks <br><br>
+> Sanila Ranatunga ⇒⇒ Developer of this bot🔥
+    
+<br><br>
 
-## Credits
-- [Sanila Assistant bot](https://t.me/sanilaassistant_bot)
-
-
-### Developer
-- [Sanila Ranatunga](https://t.me/SanilaRanatunga)
-  
-
+<h3>For more details <a href="https://t.me/sanilaassistant_bot">contact☎️</a> me! </h3>

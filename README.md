@@ -100,7 +100,7 @@ def command1(bot, message):
 
 
 ## ⚠️ Warning
- ⁕This is under GNU General Public License v3.0. Therefore changing the code is NOT ALLOWED!!<br>
+ ⁕This is under GNU General Public License v3.0. Therefore changing the code is NOT ALLOWED!!<br><br>
  ⁕You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)<br>
 
 ```

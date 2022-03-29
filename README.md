@@ -48,17 +48,13 @@ def command1(bot, message):
 <h1>Screenshots📸</h1>
 
 <p align="left">
-  <video width="320" height="240" controls>
-  <source src="VID_20220329_180436_180.mp4" type="video/mp4">
-  <source src="video" type="video/ogg">
-Your browser does not support the video tag.
-</video><br>
+  <img src="https://telegra.ph/file/d8f616652503faf2d1d73.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/6a8460fa50e3c5b0e8c6c.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/d257a79e17421df1af9f4.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/80708e4d1eab1e317005d.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/6a06bbd6cd71820c9779e.jpg" alt="Scrrenshot"><br>
    
 
   
@@ -104,7 +100,7 @@ Your browser does not support the video tag.
 
 
 ## ⚠️ Warning
- ⁕This is under GNU General Public License v3.0. Therefore changing the code is NOT ALLOWED!!<br><br>
+ ⁕This is under <b>GNU General Public License v3.0.</b> Therefore changing the code is NOT ALLOWED!!<br><br>
  ⁕You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)<br>
 
 ```

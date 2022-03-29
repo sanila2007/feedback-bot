@@ -115,7 +115,7 @@ def command1(bot, message):
 <br>
  
 >💖 Special Thanks <br><br>
-> Sanila Ranatunga ⇒⇒ Developer of this bot🔥
+> Sanila Ranatunga ⇒⇒ Developer of this bot
     
 <br><br>
 

@@ -51,10 +51,10 @@ def command1(bot, message):
   <img src="https://telegra.ph/file/d8f616652503faf2d1d73.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/d257a79e17421df1af9f4.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/6a06bbd6cd71820c9779e.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/6a06bbd6cd71820c9779e.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/d257a79e17421df1af9f4.jpg" alt="Scrrenshot"><br>
    
 
   

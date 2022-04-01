@@ -109,9 +109,9 @@ def command1(bot, message):
 -[Sanila Assistant Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
 ```
 
-## 🔃Comparison between v0.1 vs v0.7
+## 🔃Comparison between v0.1 vs v0.6
     
-| v0.1      | v0.7    |
+| v0.1      | v0.6    |
 | --------------------------- | ---------------------------- |
 | We must apply tokens on repository | No need to apply tokens on repository |
 | Only used text | Used images, videos, animations, etc.. |

@@ -67,7 +67,7 @@ def command1(bot, message):
  
 <br>
     
-## Changelog
+## 📈Changelog
 
 |   **Version**     |       **Release Notes**  |
 | ---------------- | ---------------------------------------- |
@@ -108,6 +108,20 @@ def command1(bot, message):
  
 -[Sanila Assistant Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
 ```
+
+## 🔃Comparison between v0.1 vs v0.7
+    
+| v0.1      | v0.7    |
+| --------------------------- | ---------------------------- |
+| We must apply tokens on repository | No need to apply tokens on repository |
+| Only used text | Used images, videos, animations, etc.. |
+| No need the latest version of telegram to work | Need the latest version of telegram |
+| Works with numeric systems | Works with ReplyKeyboards |
+| Feedback sending issues | No issues when sending feedbacks |
+| Very poor interface | Very attractive interface |
+| Uses less data | Uses more data due to images & videos |
+| Very complex | Very simple |
+| Less features | Much features |
 <BR><BR>
    
 > ⚠️ Note: <br><br>

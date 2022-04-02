@@ -1,5 +1,5 @@
-#Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
-#You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
+# Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
+# You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
 # ##Credits - [Sanila-Assistant-Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
 
 # Changing the code is not allowed! Read GNU General Public License v3.0: https://github.com/sanila2007/Sanila-Assistant-Bot/blob/mai/LICENSE
@@ -79,9 +79,10 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot ✨</a>\n\n"
                                       "Created on: 11/21/2021🎂\n\n"
-                                      "Latest Version:  v0.6\n\n"
+                                      "Latest Version:  v0.6.2\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a> ✌️\n\n"
+                                      "Server: <a href=https://heroku.com>Heroku</a>\n\n"
                                       "Developer: <a href=https://github.com/sanila2007>Sanila Ranatunga\n\n</a>"
                                       "Source: 🔓\n\n", disable_web_page_preview=True)
 
@@ -152,6 +153,17 @@ def reply_to_Feedback(bot, message):
     )
 
 
+@bot.on_message(filters.regex("Credits"))
+def reply_to_Credits(bot, message):
+    text = messages.CREDITS_TEXT
+    reply_markup = ReplyKeyboardMarkup(buttons.HOME_BUTTON_CR, one_time_keyboard=False, resize_keyboard=True)
+    message.reply(
+        text=text,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True
+    )
+
+
 @bot.on_message(filters.regex("Send📩"))
 def reply_to_send(bot, message):
     text = messages.SEND_TEXT
@@ -173,14 +185,13 @@ def reply_to_Report(bot, message):
     )
 
 
-
 @bot.on_message(filters.regex("Sanila Assistant Bot🤖💖"))
 def reply_to_Assistant(bot, message):
     text = "Reporting Area‼️\n\nBot = <a href=https://t.me/sanilaassistant_bot> Sanila's Assistant Bot</a>\n\n≡ Type your report here and send it\n\n≡ Then Click <<**Done**>>\n\n≡ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
            "||**Thank you for your collaboration to make us much better!💖**||"
     reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
     message.reply(
-        text=text,disable_web_page_preview=True,
+        text=text, disable_web_page_preview=True,
         reply_markup=reply_markup
     )
 
@@ -202,7 +213,7 @@ def reply_to_Song(bot, message):
            "||**Thank you for your collaboration to make us much better!💖**||"
     reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
     message.reply(
-        text=text,disable_web_page_preview=True,
+        text=text, disable_web_page_preview=True,
         reply_markup=reply_markup
     )
 
@@ -213,7 +224,7 @@ def reply_to_Torrent(bot, message):
            "||**Thank you for your collaboration to make us much better!💖**||"
     reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
     message.reply(
-        text=text,disable_web_page_preview=True,
+        text=text, disable_web_page_preview=True,
         reply_markup=reply_markup
     )
 
@@ -224,7 +235,7 @@ def reply_to_Youtube(bot, message):
            "||**Thank you for your collaboration to make us much better!💖**||"
     reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
     message.reply(
-        text=text,disable_web_page_preview=True,
+        text=text, disable_web_page_preview=True,
         reply_markup=reply_markup
     )
 

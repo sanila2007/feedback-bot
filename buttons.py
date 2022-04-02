@@ -1,4 +1,4 @@
-#Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
+# Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
 
 REPORT_BUGS_BUTTONS = [
     [
@@ -15,7 +15,6 @@ REPORT_BUGS_BUTTONS = [
         ("Youtube Video Downloader Bot🤖💖")
     ]
 ]
-
 
 REPLY_BUTTONS = [
     [
@@ -35,7 +34,8 @@ REPLY_BUTTONS = [
         ("Contact📞")
     ],
     [
-        ("Changelog ♾️")
+        ("Changelog ♾️"),
+        ("Credits 📈")
     ]
 ]
 
@@ -44,7 +44,6 @@ HELP_CENTRE_DONE_BUTTONS = [
         ("Send📩")
     ]
 ]
-
 
 LEARN_REPLY_BUTTONS = [
     [
@@ -58,7 +57,6 @@ LEARN_REPLY_BUTTONS = [
         ("Youtube Video Download Bot🤖💖")
     ]
 ]
-
 
 FEEDBACK_REPLY_BUTTONS = [
     [
@@ -86,6 +84,12 @@ DONE_REPLY_KEYBORD = [
 SEND_CONTACT_BUTTON = [
     [
         ("Send Message📩"),
+        ("Home 🔙")
+    ]
+]
+
+HOME_BUTTON_CR = [
+    [
         ("Home 🔙")
     ]
 ]

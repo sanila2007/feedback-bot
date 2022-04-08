@@ -107,7 +107,7 @@ def command1(bot, message):
 -[Sanila Assistant Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
 
 ```
-<br>
+
 > ⚠️ Note: <br><br>
 > I don't officially support forks / Clones for this assistant bot, So don't tag admins for errors your bot/deploy/code, If any error you should fix it yourself!!
 <br>

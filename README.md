@@ -14,19 +14,7 @@
     <img src="https://img.shields.io/github/issues/sanila2007/Sanila-Assistant-Bot?style=for-the-badge" alt="Issues">
 </p>  
 
-## Config Vars
-1. `API_ID` : Telegram API_ID, get it from my.telegram.org/apps
-2. `API_HASH` : Telegram API_ID, get it from my.telegram.org/apps
-3. `BOT_TOKEN` : A Valid Telegram Bot Token, get it from @Botfather
-
-
-## Works 24/7
-
-[💖 Visit here: ](https://t.me/sanilaassistant_bot)
-
-
-## At Start...
-```
+```python
 @bot.on_message(filters.command("start") & filters.private)
 def command1(bot, message):
     text = "Click any button from ReplyKeyboard as your choice..."
@@ -40,6 +28,16 @@ def command1(bot, message):
     )
 
 ```
+
+## Config Vars
+1. `API_ID` : Telegram API_ID, get it from my.telegram.org/apps
+2. `API_HASH` : Telegram API_ID, get it from my.telegram.org/apps
+3. `BOT_TOKEN` : A Valid Telegram Bot Token, get it from @Botfather
+
+
+## Works 24/7
+
+[💖 Visit here: ](https://t.me/sanilaassistant_bot)
 
 <p align="center">
 <img src="https://telegra.ph/file/ad47e2b8735f8812359d9.jpg">
@@ -107,7 +105,12 @@ def command1(bot, message):
 ## 💡 Credits
  
 -[Sanila Assistant Bot] (https://github.com/sanila2007/Sanila-Assistant-Bot)
+
 ```
+   
+> ⚠️ Note: <br><br>
+> I don't officially support forks / Clones for this assistant bot, So don't tag admins for errors your bot/deploy/code, If any error you should fix it yourself!!
+<br>
 
 ## 🔃Comparison between v0.1 vs v0.6
     
@@ -123,12 +126,9 @@ def command1(bot, message):
 | Very complex | Very simple |
 | Less features | Much features |
 <BR><BR>
-   
-> ⚠️ Note: <br><br>
-> I don't officially support forks / Clones for this assistant bot, So don't tag admins for errors your bot/deploy/code, If any error you should fix it yourself!!
-<br>
+
  
->💖 Special Thanks <br><br>
+## 💖 Special Thanks <br>
 > Sanila Ranatunga ⇒⇒ Developer of this bot
     
 <br><br>

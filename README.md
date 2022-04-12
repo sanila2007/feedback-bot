@@ -38,10 +38,6 @@ def command1(bot, message):
 ## Works 24/7
 
 [💖 Visit here: ](https://t.me/sanilaassistant_bot)
-
-<p align="center">
-<img src="https://telegra.ph/file/ad47e2b8735f8812359d9.jpg">
-<p>
  
 <h1>Screenshots📸</h1>
 
@@ -103,6 +99,24 @@ def command1(bot, message):
 | v0.1 |  ⁕Added Some Commands |
 | | ⁕Made much easier to use |
 | | ⁕Improved Chat Facilities |
+    
+<br>    
+    
+## 🔃Comparison between v0.1 vs v0.6
+    
+| v0.1      | v0.6    |
+| --------------------------- | ---------------------------- |
+| We must apply tokens on repository | No need to apply tokens on repository |
+| Only used text | Used images, videos, animations, etc.. |
+| No need the latest version of telegram to work | Need the latest version of telegram |
+| Works with numeric systems | Works with ReplyKeyboards |
+| Feedback sending issues | No issues when sending feedbacks |
+| Very poor interface | Very attractive interface |
+| Uses less data | Uses more data due to images & videos |
+| Very complex | Very simple |
+| Less features | Much features |
+<BR><BR>
+
 
 
 ## ⚠️ Warning
@@ -120,20 +134,6 @@ def command1(bot, message):
 > I don't officially support forks / Clones for this assistant bot, So don't tag admins for errors your bot/deploy/code, If any error you should fix it yourself!!
 <br>
 
-## 🔃Comparison between v0.1 vs v0.6
-    
-| v0.1      | v0.6    |
-| --------------------------- | ---------------------------- |
-| We must apply tokens on repository | No need to apply tokens on repository |
-| Only used text | Used images, videos, animations, etc.. |
-| No need the latest version of telegram to work | Need the latest version of telegram |
-| Works with numeric systems | Works with ReplyKeyboards |
-| Feedback sending issues | No issues when sending feedbacks |
-| Very poor interface | Very attractive interface |
-| Uses less data | Uses more data due to images & videos |
-| Very complex | Very simple |
-| Less features | Much features |
-<BR><BR>
 
  
 ## 💖 Special Thanks <br>

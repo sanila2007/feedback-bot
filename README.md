@@ -46,13 +46,13 @@ def command1(bot, message):
 <h1>Screenshots📸</h1>
 
 <p align="left">
-  <img src="https://telegra.ph/file/d8f616652503faf2d1d73.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/113ab2740758ead7aab47.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/6a06bbd6cd71820c9779e.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/c7354792cdf399b11ac1c.jpg" alt="Scrrenshot"><br>
   
 <p align="left">
-  <img src="https://telegra.ph/file/d257a79e17421df1af9f4.jpg" alt="Scrrenshot"><br>
+  <img src="https://telegra.ph/file/74224f6569ea2f002c900.jpg" alt="Scrrenshot"><br>
    
 
   

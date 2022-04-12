@@ -17,7 +17,7 @@
 ```python
 @bot.on_message(filters.command("start") & filters.private)
 def command1(bot, message):
-    text = "Click any button from ReplyKeyboard as your choice..."
+    text = "Use ReplyKeyboard..."
     reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS)
     bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
                    caption=messages.START_TEXT_CAPTION_TEXT),
@@ -69,6 +69,14 @@ def command1(bot, message):
 
 |   **Version**     |       **Release Notes**  |
 | ---------------- | ---------------------------------------- |
+| v0.7 |⁕Now you can't send feedbacks empty |
+| | ⁕Removed unnecessary features |
+| | ⁕Improved feedback centre |
+| | ⁕Improved report bugs centre|
+| | ⁕Improved contact section and added features |
+| | ⁕Improved changelog section |
+| | ⁕Improvements in repository |
+| | ⁕Minor bugs fixes |
 | v0.6 |  ⁕Improvements in Feedback Centre |
 | |    ⁕Fixed major problem in Contact Centre |
 | |  ⁕Fixed major problem in Feedback Centre |

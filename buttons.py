@@ -18,24 +18,20 @@ REPORT_BUGS_BUTTONS = [
 
 REPLY_BUTTONS = [
     [
-        ("About Sanila☘️"),
-        ("About Bot🤖")
+        ("About Developer ☘️"),
+        ("About Bot 🤖")
     ],
     [
-        ("Report Bugs👮"),
-        ("Feedback📝")
+        ("Report Bugs 👮"),
+        ("Feedback 📝")
     ],
     [
-        ("Learn Bots👨‍🏫"),
-        ("Github🔓")
-    ],
-    [
-        ("Help Centre💁"),
-        ("Contact📞")
-    ],
-    [
-        ("Changelog ♾️"),
+        ("Learn Bots 👨‍🏫"),
         ("Credits 📈")
+    ],
+    [
+        ("Contact 📞"),
+        ("Changelog ♾️")
     ]
 ]
 
@@ -91,5 +87,11 @@ SEND_CONTACT_BUTTON = [
 HOME_BUTTON_CR = [
     [
         ("Home 🔙")
+    ]
+]
+
+FINISH_FEEDBACK_BUTTONS = [
+    [
+        ("Finish📩")
     ]
 ]

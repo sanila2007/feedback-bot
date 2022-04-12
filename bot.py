@@ -16,17 +16,17 @@ from configs import Config
 
 bot = Client(
     "bot",
-    api_id=Config.API_ID,
-    api_hash=Config.API_HASH,
-    bot_token=Config.BOT_TOKEN
+    api_id=7263889,
+    api_hash="89c452ed35062d2d31922e6d8d069c90",
+    bot_token="2031117879:AAG5kJt7xsyMkD8EPcep9TVjXyqoFcgcTiA"
 )
 
-DONE_MESSAGE = "Thanks for collaboration to make Sanila's bots much better! You will get reply to yur feedback by this bot around **48hours** till then have some patient\n"
 
+# START MESSAGE
 
 @bot.on_message(filters.command("start") & filters.private)
 def command1(bot, message):
-    text = "Click any button from ReplyKeyboard as your choice..."
+    text = "Use ReplyKeyboard..."
     reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS)
     bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
                    caption=messages.START_TEXT_CAPTION_TEXT),
@@ -36,6 +36,9 @@ def command1(bot, message):
         disable_web_page_preview=True
     )
 
+
+
+# Learn bots section
 
 @bot.on_message(filters.regex("Learn Bots"))
 def reply_to_Learn_Bots(bot, message):
@@ -74,12 +77,14 @@ def reply_to_s_ong(bot, message):
     bot.send_photo(message.chat.id, "https://telegra.ph/file/3fc72cf3f77f4e4c3d28f.jpg", caption="<b>Step 3</b>")
 
 
+# About bot section
+
 @bot.on_message(filters.regex("About Bot"))
 def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot ✨</a>\n\n"
                                       "Created on: 11/21/2021🎂\n\n"
-                                      "Latest Version:  v0.6.2\n\n"
+                                      "Latest Version:  v0.7.3\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a> ✌️\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -87,38 +92,22 @@ def reply_to_AboutBot(bot, message):
                                       "Source: 🔓\n\n", disable_web_page_preview=True)
 
 
-@bot.on_message(filters.regex("Contact📞"))
+# Contact section
+
+@bot.on_message(filters.regex("Contact 📞"))
 def reply_to_Contact(bot, message):
-    text = messages.CONTACT_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.SEND_CONTACT_BUTTON, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text,
-        reply_markup=reply_markup,
-        disable_web_page_preview=True
-    )
+    bot.send_message(message.chat.id, messages.CONTACT_TEXT)
 
 
-@bot.on_message(filters.regex("Send Message"))
-def reply_to_Contact_send_message(bot, message):
-    bot.send_message(message.chat.id,
-                     "☑️You request has been accepted!\n\n🚶 Please have some patience until Sanila's reply.\n\nSanila's Contact Centre.")
+# About Developer
 
-
-@bot.on_message(filters.regex("About Sanila"))
+@bot.on_message(filters.regex("About Developer"))
 def reply_to_About(bot, message):
     bot.send_message(message.chat.id,
-                     "**<ins>About Sanila</ins>**\n\n""❖ Name : Sanila Ranatunga😎\n\n""❖ Age : 15 Years (2022) 🙃\n\n""❖ Birthday : 09.01.2007🎂\n\n""❖ From : Sri Lanka🇱🇰\n\n""❖ Skills : Programmer , Developer😏\n\n""❖ Ambition : Be a software engineer😊\n\n""❖ Languages : Python, HTML, CSS🙃\n\n❖ Still Learning : C++, JS, Java")
+                     "**<ins>About Developer</ins>**\n\n""❖ Name : Sanila Ranatunga😎\n\n""❖ Age : 15 Years (2022) 🙃\n\n""❖ Birthday : 09.01.2007🎂\n\n""❖ From : Sri Lanka🇱🇰\n\n""❖ Skills : Programmer , Developer😏\n\n""❖ Ambition : Be a software engineer😊\n\n""❖ Languages : Python, HTML, CSS🙃\n\n❖ Still Learning : C++, JS, Java")
 
 
-@bot.on_message(filters.regex("♻️Done & give more feedbacks"))
-def reply_to_Done_Feedback(bot, message):
-    text = messages.REPORT_BUGS_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.REPORT_BUGS_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text,
-        reply_markup=reply_markup
-    )
-
+# Home
 
 @bot.on_message(filters.regex("Home"))
 def greet(bot, message):
@@ -132,16 +121,7 @@ def greet(bot, message):
     )
 
 
-@bot.on_message(filters.regex("Help Centre💁"))
-def reply_to_Help_Centre(bot, message):
-    text = messages.HELP_CENTRE_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.HELP_CENTRE_DONE_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text,
-        reply_markup=reply_markup,
-        disable_web_page_preview=True
-    )
-
+# Feedbacks section
 
 @bot.on_message(filters.regex("Feedback"))
 def reply_to_Feedback(bot, message):
@@ -152,6 +132,8 @@ def reply_to_Feedback(bot, message):
         reply_markup=reply_markup
     )
 
+
+# Credits
 
 @bot.on_message(filters.regex("Credits"))
 def reply_to_Credits(bot, message):
@@ -164,16 +146,20 @@ def reply_to_Credits(bot, message):
     )
 
 
-@bot.on_message(filters.regex("Send📩"))
-def reply_to_send(bot, message):
-    text = messages.SEND_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
+# Finish button and text
+
+@bot.on_message(filters.regex("Finish"))
+def reply_to_finish(bot, message):
+    text = messages.FINISH_TEXT
+    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, resize_keyboard=True, one_time_keyboard=False)
     message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
     )
 
+
+# Report bugs section
 
 @bot.on_message(filters.regex("Report Bugs"))
 def reply_to_Report(bot, message):
@@ -185,71 +171,66 @@ def reply_to_Report(bot, message):
     )
 
 
-@bot.on_message(filters.regex("Sanila Assistant Bot🤖💖"))
-def reply_to_Assistant(bot, message):
-    text = "Reporting Area‼️\n\nBot = <a href=https://t.me/sanilaassistant_bot> Sanila's Assistant Bot</a>\n\n≡ Type your report here and send it\n\n≡ Then Click <<**Done**>>\n\n≡ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-           "||**Thank you for your collaboration to make us much better!💖**||"
-    reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text, disable_web_page_preview=True,
-        reply_markup=reply_markup
-    )
-
-
-@bot.on_message(filters.regex("Done"))
-def reply_to_Done(bot, message):
-    text = messages.SEND_TEXT_FEEDBACK
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text,
-        reply_markup=reply_markup
-
-    )
-
-
-@bot.on_message(filters.regex("Song Downloader Bot"))
-def reply_to_Song(bot, message):
-    text = "Reporting Area‼️\n\nBot = <a href=https://t.me/songdownload597_bot> Song Downloader Bot</a>\n\n≡ Type your report here and send it\n\n≡ Then Click <<**Done**>>\n\n≡ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-           "||**Thank you for your collaboration to make us much better!💖**||"
-    reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text, disable_web_page_preview=True,
-        reply_markup=reply_markup
-    )
-
-
-@bot.on_message(filters.regex("Torrent Downloader Bot"))
-def reply_to_Torrent(bot, message):
-    text = "Reporting Area‼️\n\nBot = <a href=https://t.me/torrentdownloader88_bot> Torrent Downloader Bot</a>\n\n≡ Type your report here and send it\n\n≡ Then Click <<**Done**>>\n\n≡ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-           "||**Thank you for your collaboration to make us much better!💖**||"
-    reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text, disable_web_page_preview=True,
-        reply_markup=reply_markup
-    )
-
-
-@bot.on_message(filters.regex("Youtube Video Downloader Bot"))
-def reply_to_Youtube(bot, message):
-    text = "Reporting Area‼️\n\nBot = <a href=https://t.me/youtubevideodownloader45_bot>Youtube Video Downloader Bot</a>\n\n≡ Type your report here and send it\n\n≡ Then Click <<**Done**>>\n\n≡ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-           "||**Thank you for your collaboration to make us much better!💖**||"
-    reply_markup = ReplyKeyboardMarkup(buttons.DONE_REPLY_KEYBORD, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text, disable_web_page_preview=True,
-        reply_markup=reply_markup
-    )
-
-
-@bot.on_message(filters.regex("Github"))
-def reply_to_Github(bot, message):
-    bot.send_message(message.chat.id,
-                     "Check out the projects of me on <a href=https://github.com/sanila2007>GitHub.</a>",
-                     disable_web_page_preview=True)
-
+# Changelog Section
 
 @bot.on_message(filters.regex("Changelog"))
 def reply_to_Changelog(bot, message):
-    bot.send_message(message.chat.id, messages.CHANGELOG_TEXT)
+    bot.send_message(message.chat.id, messages.CHANGELOG_TEXT, disable_web_page_preview=True)
+
+
+# Assistant Bot Feedback/Report bugs centre
+
+@bot.on_message(filters.regex("Sanila Assistant Bot"))
+def reply_to_Assistant(bot, message):
+    text = messages.SANILA_ASSISTANT_TEXT
+    reply_markup = None
+    message.reply(
+        text=text, disable_web_page_preview=True,
+        reply_markup=reply_markup
+    )
+
+
+# Reporting area - Song Downloader bot
+
+@bot.on_message(filters.regex("Song Downloader Bot"))
+def reply_to_Song(bot, message):
+    text = messages.SONG_DOWNLOADER_TEXT
+    message.reply(
+        text=text,
+        disable_web_page_preview=True
+    )
+
+
+# Reporting area - Torrent downloader bot
+
+@bot.on_message(filters.regex("Torrent Downloader Bot"))
+def reply_to_Torrent(bot, message):
+    text = messages.TORRENT_DOWNLOADER_TEXT
+    message.reply(
+        text=text,
+        disable_web_page_preview=True
+    )
+
+
+# Reporting area - Youtube video downloader bot
+
+@bot.on_message(filters.regex("Youtube Video Downloader Bot"))
+def reply_to_Youtube(bot, message):
+    text = messages.YOUTUBE_VIDEO_DOWNLOADER_TEXT
+    message.reply(
+        text=text,
+        disable_web_page_preview=True
+    )
+
+
+@bot.on_message(filters.private)
+async def hello(bot, message):
+    text = messages.SEND_TEXT_FEEDBACK
+    reply_markup = ReplyKeyboardMarkup(buttons.FINISH_FEEDBACK_BUTTONS, resize_keyboard=True,
+                                       one_time_keyboard=False)
+    await message.reply(
+        text=text,
+        reply_markup=reply_markup)
 
 
 print("Bot is alive📶✨")

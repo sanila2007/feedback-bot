@@ -1,15 +1,8 @@
 # Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved
 
-HELP_CENTRE_TEXT = "**Help Centre**\n\n" \
-                   "√ This help centre was created to ask questions about bots or to fix your problems about those.\n\n " \
-                   "√ You can ask them here and after you sent your " \
-                   "message click <<<b>Send📩</b>>> \n\n" \
-                   "√ You will receive your answer for your question through this bot around <b>48 hours.</b>\n\n" \
-                   "||<b>Please accept my apologies in advance if my reply was exceeded the time period.</b>||"
-
 FEEDBACK_REPLY_TEXT = "First please select a bot!!👮"
 
-CONTACT_TEXT = "**Contact**\n\n√ You can connect with Sanila from here.\n\n√ Type your message and click <<**Send📩**>>"
+CONTACT_TEXT = "**Contact**\n\n√ You can connect with Sanila from here.\n\n√ Type your message here and send.\n\n√ After you finish click <<**Finish📩**>>"
 
 REPLY_MESSAGE = "Hello dear, You can ue this bot to✨,\n\n" \
                 "    -Give feedbacks  🐞.\n\n" \
@@ -26,36 +19,24 @@ START_TEXT_CAPTION_TEXT = "Hello dear💖, This is Sanila's Telegram Assistant b
                           "▬▬▬ ◈ @songdownload597_bot\n" \
                           "▬▬▬ ◈ @torrentdownloader88_bot\n" \
                           "▬▬▬ ◈ @youtubevideodownloader45_bot\n\n" \
-                          "You can ue this bot✨👇,\n\n" \
-                          "     √ To give feedbacks📝\n" \
-                          "     √ To give suggestions💡\n" \
-                          "     √ To contact with Sanila☎️\n" \
-                          "     √ To ask any questions📜\n" \
-                          "     √ To learn how bots work👨‍🏫\n\n" \
                           "◇───────────────◇\n\n" \
                           "☘️Developer : ``<i>Sanila Ranatunga</i>``\n\n" \
-                          "📊 Bot Status : ||<i>Alive👁️‍🗨️</i>||\n\n" \
                           "**𝟸𝟶𝟸𝟷-𝟸𝟶𝟸𝟸©**\n\n" \
                           "◇───────────────◇"
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 
-SEND_TEXT = "☑️Your request has been accepted!\n\n🚶 Please have some patience until Sanila's reply.\n\nHelp Centre."
+
 
 SEND_TEXT_FEEDBACK = "☑️Your request has been accepted!\n\n🚶 Please have some patience until Sanila's reply.\n\nFeedback Centre."
 
-SEND_TEXT_REPORT = "☑️Your request has been accepted!\n\n🚶 Please have some patience until Sanila's reply.\n\nReporting Centre."
-SEND_TEXT_CONTACT = "☑️Your request has been accepted!\n\n🚶 Please have some patience until Sanila's reply.\n\nSanila's Contact Centre."
 
 NUMBER = 6
 
 CHANGELOG_TEXT = "**Changelog**\n\n" \
+                 "🆅0.7\n ⁕Now you can't send feedbacks empty\n ⁕Removed unnecessary features\n ⁕Improved feedback centre\n ⁕Improved report bugs centre\n ⁕Improved contact section and added features\n ⁕Improved changelog section\n ⁕Improvements in repository\n ⁕Minor bugs fixes\n\n " \
                  "🆅0.6\n ⁕Improvements in Feedback Centre\n ⁕Fixed major problem in Contact Centre\n ⁕Fixed major problem in Feedback Centre\n ⁕Removed some commands\n ⁕Minor bugs fixes\n ⁕Optimizations\n\n" \
-                 "🆅0.5\n ⁕100% works with Inline & Reply KeyboardButtons\n ⁕Improved the feedback and bugs reporting section\n ⁕Added ability to learn how bots works using images\n ⁕Added Help Centre\n ⁕Added learning centre\n ⁕Added Contact facility\n ⁕Optimization\n ⁕Minor bug fixes\n\n" \
-                 "🆅0.4\n ⁕Added InlineKeyboardButtons\n ⁕	Added ReplyKeyboardButtons\n ⁕Optimizations and minor bug fixes\n\n""" \
-                 "🆅0.3\n ⁕Fixed errors in v0.2\n ⁕Changed the welcome msg\n ⁕Optimizations and bug fixes\n\n""" \
-                 "🆅0.2\n ⁕Changed the interface much attractive\n"" ⁕What's new changed to Changelog\n ⁕Minor bugs fixes\n\n""" \
-                 "🆅0.1\n ⁕Added Some Commands\n"" ⁕Made much easier to use\n"" ⁕Improved Chat Facilities\n\n||<i>More features coming on v0.7 update...</i>||"
+                 "<a href=https://github.com/sanila2007/Sanila-Assistant-Bot#changelog>see more...</a>"
 
 CREDITS_TEXT = "**Credits**\n\nThis bot was created by Sanila under **GNU General Public License v3.0**. Therefore changing the code is NOT ALLOWED TO YOU!!\n\n" \
                "For the good of everyone read <a href=https://github.com/sanila2007/Sanila-Assistant-Bot/blob/mai/LICENSE>GNU General Public License v3.0</a> first!\n\n" \
@@ -66,3 +47,34 @@ CREDITS_TEXT = "**Credits**\n\nThis bot was created by Sanila under **GNU Genera
                "\n\nSpecial thanks to,\n" \
                "      »<a href=https://github.com/sanila2007>Sanila Ranatunga</a>\n" \
                "      »<a href=https://github.com/pyrogram/pyrogram>Pyrogram</a>"
+
+FINISH_TEXT = "Thanks for your feedback!\n\n" \
+              "Your valuable feedbacks help us to build our bots much friendly. When you sending your feedback " \
+              "please include a screenshot of it because it helps us to decide what is the error.\n\n" \
+              "It usually takes about 48 hours to get back to you," \
+              " please accept our apologies in advance for any reply that exceeds this time frame.\n\n" \
+              "Thank you! Feedback Centre."
+
+SANILA_ASSISTANT_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/sanilaassistant_bot> Sanila's Assistant Bot</a>\n\n" \
+                        "◉ Type your report here and send it\n\n" \
+                        "◉ After you finish click <<**Finish📩**>>\n\n" \
+                        "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
+                        "||**Thank you for your collaboration to make these much better!**||"
+
+SONG_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/songdownload597_bot> Song Downloader Bot</a>\n\n" \
+                       "◉ Type your report here and send it\n\n" \
+                       "◉ After you finish click <<**Finish📩**>>\n\n" \
+                       "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
+                       "||**Thank you for your collaboration to make these much better!**||"
+
+TORRENT_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/torrentdownloader88_bot> Torrent Downloader Bot</a>\n\n" \
+                          "◉ Type your report here and send it\n\n" \
+                          "◉ After you finish click <<**Finish📩**>>\n\n" \
+                          "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
+                          "||**Thank you for your collaboration to make these much better!**||"
+
+YOUTUBE_VIDEO_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/youtubevideodownloader45_bot>Youtube Video Downloader Bot</a>\n\n" \
+                                "◉ Type your report here and send it\n\n" \
+                                "◉ After you finish click <<**Finish📩**>>\n\n" \
+                                "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
+                                "||**Thank you for your collaboration to make these much better!**||"

@@ -27,7 +27,7 @@ bot = Client(
 @bot.on_message(filters.command("start") & filters.private)
 def command1(bot, message):
     text = "Use ReplyKeyboard..."
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS)
+    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, resize_keyboard=True)
     bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
                    caption=messages.START_TEXT_CAPTION_TEXT),
     message.reply(

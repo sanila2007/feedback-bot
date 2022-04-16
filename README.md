@@ -130,7 +130,8 @@ def command1(bot, message):
 
 ```
 
-> ⚠️ Note: <br><br>
+## ⚠️ Note: <br>
+
 > I don't officially support forks / Clones for this assistant bot, So don't tag admins for errors your bot/deploy/code, If any error you should fix it yourself!!
 <br>
 

@@ -1,5 +1,5 @@
 
-<h1 align= center>Sanila Assistant Bot </h1>
+<h1 align= center><a href="https://t.me/sanilaassistant_bot">Sanila Assistant Bot</a> </h1>
 <h3 align = center>To give your feedbacks, bugs reports you can use this bot.</h3>
 <p align="center">
 <a href="https://python.org"><img src="http://forthebadge.com/images/badges/made-with-python.svg" alt="made-with-python"></a>
@@ -140,6 +140,3 @@ def command1(bot, message):
 ## 💖 Special Thanks <br>
 > Sanila Ranatunga ⇒⇒ Developer of this bot
     
-<br><br>
-
-<h3>For more details <a href="https://t.me/sanilaassistant_bot">contact☎️</a> me! </h3>

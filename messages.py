@@ -28,7 +28,7 @@ REPORT_BUGS_TEXT = "Please select a bot!!👮"
 
 
 
-SEND_TEXT_FEEDBACK = "☑️Your request has been accepted!\n\n🚶 Please have some patience until Sanila's reply.\n\nFeedback Centre."
+SEND_TEXT_FEEDBACK = "☑️Your request has been accepted!\n\n🚶 Please have some patience until admin's reply.\n\nFeedback Centre."
 
 
 NUMBER = 6
@@ -53,28 +53,24 @@ FINISH_TEXT = "Thanks for your feedback!\n\n" \
               "please include a screenshot of it because it helps us to decide what is the error.\n\n" \
               "It usually takes about 48 hours to get back to you," \
               " please accept our apologies in advance for any reply that exceeds this time frame.\n\n" \
-              "Thank you! Feedback Centre."
+              "Feedback Centre."
 
 SANILA_ASSISTANT_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/sanilaassistant_bot> Sanila's Assistant Bot</a>\n\n" \
                         "◉ Type your report here and send it\n\n" \
                         "◉ After you finish click <<**Finish📩**>>\n\n" \
-                        "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-                        "||**Thank you for your collaboration to make these much better!**||"
+                        "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>"
 
 SONG_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/songdownload597_bot> Song Downloader Bot</a>\n\n" \
                        "◉ Type your report here and send it\n\n" \
                        "◉ After you finish click <<**Finish📩**>>\n\n" \
-                       "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-                       "||**Thank you for your collaboration to make these much better!**||"
+                       "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>"
 
 TORRENT_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/torrentdownloader88_bot> Torrent Downloader Bot</a>\n\n" \
                           "◉ Type your report here and send it\n\n" \
                           "◉ After you finish click <<**Finish📩**>>\n\n" \
-                          "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-                          "||**Thank you for your collaboration to make these much better!**||"
+                          "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>"
 
 YOUTUBE_VIDEO_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/youtubevideodownloader45_bot>Youtube Video Downloader Bot</a>\n\n" \
                                 "◉ Type your report here and send it\n\n" \
                                 "◉ After you finish click <<**Finish📩**>>\n\n" \
-                                "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>\n\n" \
-                                "||**Thank you for your collaboration to make these much better!**||"
+                                "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>"

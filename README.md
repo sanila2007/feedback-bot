@@ -121,6 +121,6 @@ def command1(bot, message):
 
  
 ## 💖 Credits: <br>
-> Sanila Ranatunga
+> Sanila Ranatunga<br>
 > Pyrogram 
     

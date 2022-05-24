@@ -101,24 +101,7 @@ def command1(bot, message):
 | | ⁕Improved Chat Facilities |
     
 <br>    
-    
-## 🔃Comparison between v0.1 vs v0.6
-    
-| v0.1      | v0.6    |
-| --------------------------- | ---------------------------- |
-| We must apply tokens on repository | No need to apply tokens on repository |
-| Only used text | Used images, videos, animations, etc.. |
-| No need the latest version of telegram to work | Need the latest version of telegram |
-| Works with numeric systems | Works with ReplyKeyboards |
-| Feedback sending issues | No issues when sending feedbacks |
-| Very poor interface | Very attractive interface |
-| Uses less data | Uses more data due to images & videos |
-| Very complex | Very simple |
-| Less features | Much features |
-<BR><BR>
-
-
-
+   
 ## ⚠️ Warning
  ⁕This is under <b>GNU General Public License v3.0.</b> Therefore changing the code is NOT ALLOWED!!<br><br>
  ⁕You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)<br>
@@ -137,6 +120,7 @@ def command1(bot, message):
 
 
  
-## 💖 Special Thanks <br>
-> Sanila Ranatunga ⇒⇒ Developer of this bot
+## 💖 Credits: <br>
+> Sanila Ranatunga
+> Pyrogram 
     

@@ -57,8 +57,11 @@ def command1(bot, message):
 ### Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sanila2007/Sanila-Assistant-Bot)
-    
- 
+   
+### Okteto
+
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com)
+     
 <br>
     
 ## 📈Changelog

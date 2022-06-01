@@ -63,8 +63,9 @@ def command1(bot, message):
 [![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com)
      
 <br>
-    
-## 📈Changelog
+<h2> 📈Changelog </h2>
+  
+<details>
 
 |   **Version**     |       **Release Notes**  |
 | ---------------- | ---------------------------------------- |
@@ -102,7 +103,7 @@ def command1(bot, message):
 | v0.1 |  ⁕Added Some Commands |
 | | ⁕Made much easier to use |
 | | ⁕Improved Chat Facilities |
-    
+</details>   
 <br>    
    
 ## ⚠️ Warning

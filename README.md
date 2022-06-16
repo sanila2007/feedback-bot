@@ -107,7 +107,7 @@ def command1(bot, message):
 <br>    
    
 ## ⚠️ Warning
- ⁕This is under <b>GNU General Public License v3.0.</b> Therefore changing the code is NOT ALLOWED!!<br><br>
+ ⁕This is under <b>GNU General Public License v3.0.</b><br><br>
  ⁕You are free to use this code in any of your projects, but you MUST include the following in your README.md (Copy & paste)<br>
 
 ```

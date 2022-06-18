@@ -23,6 +23,14 @@
         "BOT_TOKEN": {
             "description": "Get from Telegram's @BotFather",
             "required": true
+        },
+        "LOG_CHANNEL": {
+            "description": "Create a public channel and enter the username here",
+            "required": true
+        },
+        "FEEDBACK_CHANNEL": {
+            "description": "Create a public channel and enter the username here",
+            "required": false
         }
     },
     "formation": {

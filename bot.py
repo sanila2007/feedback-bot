@@ -23,9 +23,11 @@ from config import Config
 
 bot = Client(
     "bot",
-    api_id=7263889,
-    api_hash="89c452ed35062d2d31922e6d8d069c90",
-    bot_token="2031117879:AAFVvpmYOPo2u5qRJJTqG0OTp2DLIRu1rEw"
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    bot_token=Config.BOT_TOKEN,
+    LOG_CHANNEL=Config.LOG_CHANNEL,
+    FEEDBACK_CHANNEL=Config.FEEDBACK_CHANNEL
 )
 
 

@@ -97,7 +97,7 @@ deploying to Okteto. but you can deploy it as your choice,<br><br>
 ● Instant view supports<br>
 ● Added ForceReply<br>
 ● Feedback improvements<br>
-● Stickers has been restricted<br>
+● Stickers have been restricted<br>
 ● Minor bug fixes<br>
 
 <a href="https://github.com/sanila2007/feedback-bot/blob/mai/release%20notes/release_notes.txt">Read more...</a>

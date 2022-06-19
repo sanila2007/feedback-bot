@@ -124,6 +124,6 @@ If any errors you should fix it yourself!!</pre>
 
 ## Credits: <br>
  • <a href="https://github.com/sanila2007">Sanila Ranatunga</a> <br>
- • <a href="https://github.com/pyrogram">Pyrogram</a> 
+ • <a href="https://github.com/pyrogram/pyrogram">Pyrogram</a> 
   
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/sanila2007/feedback-bot)   

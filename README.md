@@ -30,7 +30,7 @@
 
 ## Learn more about this repository
 
-This is a multi functional telegram bot that can collect feedbacks from users. This bot was created using pyrogram library.<br>
+This is a multi functional telegram bot that can collect feedbacks from users. This bot was created using pyrogram library.
 features of this bot,<br>
        ● Give feedbacks<br>
        ● Collect feedbacks `admin(s) only`<br>

@@ -3,6 +3,8 @@
 
 > Multi functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...
 
+----
+
     
 <p align="center">
 <a href="https://python.org"><img src="http://forthebadge.com/images/badges/made-with-python.svg" alt="made-with-python"></a>
@@ -24,6 +26,7 @@
 3. `BOT_TOKEN` : A Valid Telegram Bot Token, get it from @Botfather
 4. `LOG_CHANNEL` : Create a Telegram channel and enter the username 
 5. `FEEDBACK_CHANNEL` : Create a Telegram channel and enter the username
+<br>
 
 ## Learn more about this repository
 
@@ -86,69 +89,41 @@ deploying to Okteto. but you can deploy it as your choice,<br><br>
      
 <br>
 
-### What's new in this v0.8.0
-<details>
+## What's new in this v0.8.0
 
-|   **Version**     |       **Release Notes**  |
-| ---------------- | ---------------------------------------- |
-| v0.7 |⁕Now you can't send feedbacks empty |
-| | ⁕Removed unnecessary features |
-| | ⁕Improved feedback centre |
-| | ⁕Improved report bugs centre|
-| | ⁕Improved contact section and added features |
-| | ⁕Improved changelog section |
-| | ⁕Improvements in repository |
-| | ⁕Minor bugs fixes |
-| v0.6 |  ⁕Improvements in Feedback Centre |
-| |    ⁕Fixed major problem in Contact Centre |
-| |  ⁕Fixed major problem in Feedback Centre |
-| | ⁕Removed some commands |
-| |  ⁕Minor bugs fixes |
-| | ⁕Optimizations |
-| v0.5 | ⁕100% works with Inline & Reply KeyboardButtons |
-| |  ⁕Improved the feedback and bugs reporting section |
-| |  ⁕Added ability to learn how bots works using images |
-| | ⁕Added Help Centre |
-| | ⁕Added learning centre |
-| | ⁕Added Contact facility |
-| | ⁕Optimization |
-| | ⁕Minor bug fixes |
-| v0.4 |  ⁕Added InlineKeyboardButtons |
-| | ⁕ Added ReplyKeyboardButtons |
-| | ⁕Optimizations and minor bug fixes |
-| v0.3 |  ⁕Fixed errors in v0.2 |
-| | ⁕Changed the welcome msg |
-| | ⁕Optimizations and bug fixes |
-| v0.2 |  ⁕Changed the interface much attractive |
-| | ⁕What's new changed to Changelog |
-| | ⁕Minor bugs fixes |
-| v0.1 |  ⁕Added Some Commands |
-| | ⁕Made much easier to use |
-| | ⁕Improved Chat Facilities |
-</details>   
-<br>    
+● Added CAPTCHA /captcha<br>
+● Added facility to rate bots<br>
+● Added log channel (admin only)<br>
+● Instant view supports<br>
+● Added ForceReply<br>
+● Feedback improvements<br>
+● Stickers has been restricted<br>
+● Minor bug fixes<br>
+
+<a href="https://github.com/sanila2007/feedback-bot/blob/mai/release%20notes/release_notes.txt">Read more...</a>
+
+  
    
-## ⚠️ Warning
+## Warning
  ⁕This is under <b>GNU General Public License v3.0.</b><br><br>
  ⁕You are free to use this code in any of your projects, but you MUST include the following in your `README.md` (Copy & paste)<br>
 
 ```
-## 💡 Credits
+## Credits
  
 -[feedback-bot] (https://github.com/sanila2007/feedback-bot)
 
 ```
 
-## ⚠️ Note: <br>
+## Note: <br>
 
-<pre> I don't officially support forks / Clones for this feedback bot,
+<pre>I don't officially support forks / Clones for this feedback bot,
 So don't tag admins for errors of your deploy/code, 
 If any errors you should fix it yourself!!</pre>
-<br>
 
 
- 
-## 💖 Credits: <br>
- •[Sanila Ranatunga] (https://github.com/sanila2007) <br>
- •[Pyrogram] (https://github.com/pyrogram) 
-    
+## Credits: <br>
+ • <a href="https://github.com/sanila2007">Sanila Ranatunga</a> <br>
+ • <a href="https://github.com/pyrogram">Pyrogram</a> 
+  
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/sanila2007/feedback-bot)   

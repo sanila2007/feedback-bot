@@ -25,9 +25,7 @@ bot = Client(
     "bot",
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
-    bot_token=Config.BOT_TOKEN,
-    LOG_CHANNEL=Config.LOG_CHANNEL,
-    FEEDBACK_CHANNEL=Config.FEEDBACK_CHANNEL
+    bot_token=Config.BOT_TOKEN
 )
 
 

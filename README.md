@@ -1,7 +1,7 @@
 
 <h1 align= left><a href="https://t.me/sanilaassistant_bot">feedback bot</a> </h1>
 
-> Multi functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...
+> Multi functional bot that can give & collect feedbacks from users and broadcast replies to them with cool features such as rating bots, completing captchas & etc...
 
 ----
 

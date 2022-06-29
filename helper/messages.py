@@ -22,7 +22,7 @@ REPLY_MESSAGE = "Hello dear, You can ue this bot to✨,\n\n" \
 
 LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
-START_TEXT_CAPTION_TEXT = "Hello user💖,\n\n" \
+START_TEXT_CAPTION_TEXT = "Hello💖,\n\n" \
                           "◇───────────────◇\n\n" \
                           "**These are the bots that created by Sanila🙇‍♂.**\n\n" \
                           "▬▬▬ ◈ <a href=https://t.me/songdownload597_bot>Song Download Bot</a>\n" \

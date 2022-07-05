@@ -2,14 +2,14 @@
     "name": "Sanila-Assistant-bot",
     "description": "Powerful Telegram bot to connect with sanila",
     "repository": "https://github.com/sanila2007/Sanila-Assistant-Bot",
-    "logo": "https://telegra.ph/file/73550b9954e83d4a571fc.jpg",
+    "logo": "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
     "keywords": [
-        "countdown",
-        "timer",
-        "important events",
-        "countdown timer",
+        "feedback bot",
+        "feedback collector",
+        "pyrogram bot",
+        "report collector",
         "Telegram bot",
-        "Pyrogram bot"
+        "assistant bot"
     ],
     "env": {
         "API_ID": {

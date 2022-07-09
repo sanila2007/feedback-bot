@@ -7,7 +7,6 @@
 # Star and fork and enjoy!
 
 
-
 import datetime
 from datetime import timedelta
 

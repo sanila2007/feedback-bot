@@ -6,7 +6,6 @@
 # Don't forget to follow github.com/sanila2007 because I'm doing these things for free and open source
 # Star and fork and enjoy!
 
-
 REPORT_BUGS_BUTTONS = [
     [
         ("Sanila Assistant Bot🤖💖")

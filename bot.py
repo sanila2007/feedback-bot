@@ -8,17 +8,12 @@
 
 
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ForceReply
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ForceReply, InputMediaPhoto
 
 from helper import buttons, messages
-from plugins import date_info, ratings
+from plugins import date_info, ratings, quotes_text
 from Captcha import captcha_buttons, captcha_text
-
-from pyrogram.errors.exceptions.bad_request_400 import *
-from pyrogram.errors import *
 from pyrogram import Client, filters
-from pyrogram.errors import *
-import datetime
 from config import Config
 
 bot = Client(
@@ -32,18 +27,18 @@ bot = Client(
 # START MESSAGE
 
 @bot.on_message(filters.command("start") & filters.private)
-def command1(bot, message):
+async def command1(bot, message):
+    await bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
+                         caption=messages.START_TEXT_CAPTION_TEXT),
     text = "Use ReplyKeyboard..."
     reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
-                   caption=messages.START_TEXT_CAPTION_TEXT),
-    bot.send_message(Config.LOG_CHANNEL,
-                     f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
-    message.reply(
+    await message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
     )
+    await bot.send_message(Config.LOG_CHANNEL,
+                           f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
 
 
 # Learn bots section
@@ -68,31 +63,17 @@ async def restric_sticker(bot, message):
 
 @bot.on_message(filters.regex("Song Download Bot🤖💖"))
 def reply_to_utube(bot, message):
-    bot.send_message(message.chat.id, "Song Downloader bot!!")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/87ce14694a8c1d65cffaf.jpg", caption="<b>Step 1</b>")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/13218e7e5fb04f37d555e.jpg",
-                   caption="<b>Step 2\nYou must send the song like this👇👇\n   ️/song Senorita</b>")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/a3de0355d3fa67676e680.jpg", caption="<b>Step 3</b>")
+    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-Song-Downloader-Bot-07-09")
 
 
-@bot.on_message((filters.regex("Torrent Download Bot🤖💖")))
-def reply_to_s_ong(bot, message):
-    bot.send_message(message.chat.id, "Torrent downloader bot!")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/cedb06244d2f74979095f.jpg", caption="<b>Step 1</b>")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/b5956b401cb68cd7b8d2f.jpg", caption="<b>Step 2</b>")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/a3d2f02b3c7e4ab742bc8.jpg", caption="<b>Step 3</b>")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/17f2f0820c5007b136086.jpg", caption="<b>Step 4</b>")
+@bot.on_message(filters.regex("Torrent Download Bot🤖💖"))
+def reply_to_s_on(bot, message):
+    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Torrent-Downloader-Bot-07-09")
 
 
 @bot.on_message((filters.regex("Youtube Video Download Bot🤖💖")))
 def reply_to_s_ong(bot, message):
-    bot.send_message(message.chat.id, "Youtube Video Downloader bot!!!")
-    message.reply_chat_action("upload_photo")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/81aab8398259866256409.jpg", caption="<b>Step 1</b>")
-    message.reply_chat_action("upload_photo")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/e1c08af0c0e5f28053855.jpg", caption="<b>Step 2</b>")
-    message.reply_chat_action("upload_photo")
-    bot.send_photo(message.chat.id, "https://telegra.ph/file/3fc72cf3f77f4e4c3d28f.jpg", caption="<b>Step 3</b>")
+    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Youtube-Video-Downloader-Bot-07-09")
 
 
 # About bot section
@@ -100,9 +81,9 @@ def reply_to_s_ong(bot, message):
 @bot.on_message(filters.regex("About Bot"))
 def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
-                                      "Name: <a href=https://t.me/sanilaassistant_bot>Feedback Bot </a>\n\n"
+                                      "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: 11/21/2021\n\n"
-                                      "Latest Version:  v0.8.0\n\n"
+                                      "Latest Version:  v0.8.1\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -122,7 +103,7 @@ def reply_to_Contact(bot, message):
 @bot.on_message(filters.regex("About Developer"))
 def reply_to_About(bot, message):
     bot.send_message(message.chat.id,
-                     "**<ins>About Developer</ins>**\n\n""❖ Name : ``Sanila Ranatunga``\n\n""❖ Age : 15 Years (2022\n\n""❖ Birthday : 09.01.2007\n\n""❖ From : Sri Lanka🇱🇰\n\n""❖ Skills : Programmer , Developer\n\n""❖ Ambition : Be a software engineer\n\n""❖ Languages : Python, HTML, CSS\n\n❖ Still Learning : C++, JS, Java")
+                     "**<ins>About Developer</ins>**\n\n""❖ Name : Sanila Ranatunga\n\n""❖ Age : 15 Years (2022)\n\n""❖ Birthday : 09.01.2007\n\n""❖ From : Sri Lanka\n\n""❖ Skills : Programmer , Developer\n\n""❖ Ambition : Be a software engineer\n\n""❖ Languages : Python, HTML, CSS, JS\n\n❖ Still Learning : C++, Java")
 
 
 # Home
@@ -137,9 +118,14 @@ def greet(bot, message):
         disable_web_page_preview=True
 
     )
+
+
 @bot.on_message(filters.regex("Finish"))
 def reply_finish(bot, message):
-    bot.send_message(message.chat.id, messages.REPLY_MESSAGE, reply_markup=ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, resize_keyboard=True, one_time_keyboard=False))
+    bot.send_message(message.chat.id, messages.FEEDBACK_FINISH_TEXT,
+                     reply_markup=ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, resize_keyboard=True,
+                                                      one_time_keyboard=False))
+
 
 # Feedbacks section
 
@@ -164,8 +150,6 @@ def reply_to_Credits(bot, message):
         reply_markup=reply_markup,
         disable_web_page_preview=True
     )
-
-
 
 
 # Changelog Section
@@ -212,51 +196,77 @@ def reply_to_rate_bots(bot, message):
     )
 
 
+RATING_BOT = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("⭐", callback_data="one_star")
+        ],
+        [
+            InlineKeyboardButton("⭐⭐", callback_data="two_star")
+        ],
+        [
+            InlineKeyboardButton("⭐⭐⭐", callback_data="three_star")],
+        [
+            InlineKeyboardButton("⭐⭐⭐⭐", callback_data="four_star")
+
+        ],
+        [
+
+            InlineKeyboardButton("⭐⭐⭐⭐⭐", callback_data="five_star")
+        ]
+    ]
+)
+
+
 # Rating bots
 
 @bot.on_message(filters.regex("Assistant Bot"))
 def reply_to_rating_assistant(bot, message):
-    bot.send_poll(message.chat.id, "How many stars would you like to give to Sanila Assistant Bot?",
-                  ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"])
+    reply_markup = RATING_BOT
     bot.send_message(message.chat.id,
-                     "**Neither your ratings nor others ratings can see anyone due to privacy of users.** Your ratings will be **reset** when again "
-                     "you came here to rate them but **these ratings will share with admin.**")
+                     f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
+                     reply_markup=reply_markup)
+    bot.send_message(Config.FEEDBACK_CHANNEL,
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
 @bot.on_message(filters.regex("Torrent Bot"))
 def reply_to_rating_assistant(bot, message):
-    bot.send_poll(message.chat.id, "How many stars would you like to give to Torrent Download Bot?",
-                  ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"])
+    reply_markup = RATING_BOT
     bot.send_message(message.chat.id,
-                     "**Neither your ratings nor others ratings can see anyone due to privacy of users.** Your ratings will be **reset** when again "
-                     "you came here to rate them but **these ratings will share with admin.**")
+                     f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
+                     reply_markup=reply_markup)
+    bot.send_message(Config.FEEDBACK_CHANNEL,
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
 @bot.on_message(filters.regex("Youtube Bot"))
 def reply_to_rating_assistant(bot, message):
-    bot.send_poll(message.chat.id, "How many stars would you like to give to Youtube Video Download Bot?",
-                  ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"])
+    reply_markup = RATING_BOT
     bot.send_message(message.chat.id,
-                     "**Neither your ratings nor others ratings can see anyone due to privacy of users.** Your ratings will be **reset** when again "
-                     "you came here to rate them but **these ratings will share with admin.**")
+                     f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
+                     reply_markup=reply_markup)
+    bot.send_message(Config.FEEDBACK_CHANNEL,
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
 @bot.on_message(filters.regex("Song Bot"))
 async def reply_to_rating_assistant(bot, message):
-    await bot.send_poll(message.chat.id, "How many stars would you like to give to Song Download Bot?",
-                        ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"])
+    reply_markup = RATING_BOT
     await bot.send_message(message.chat.id,
-                           "**Neither your ratings nor others ratings can see anyone due to privacy of users.** Your ratings will be **reset** when again "
-                           "you came here to rate them but **these ratings will share with admin.**")
+                           f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
+                           reply_markup=reply_markup)
+    await bot.send_message(Config.FEEDBACK_CHANNEL,
+                           f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
 # Reporting area - Torrent downloader bot
 
 @bot.on_message(filters.regex("Torrent Downloader Bot"))
-def reply_to_Torrent(bot, message):
+async def reply_to_Torrent(bot, message):
     reply_markup = ForceReply(message.chat.id)
     text = messages.TORRENT_DOWNLOADER_TEXT
-    message.reply(
+    await message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
@@ -287,11 +297,18 @@ def captch(bot, message):
     )
 
 
-
-
 @bot.on_message(filters.private)
 def fbb(bot, message):
-    tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {message.text.split()}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n<i>*Add more feedbacks or click finish to finish this process!</i>"
+    WORD_COUNT = len(message.text.split())
+    if WORD_COUNT == 1:
+        print(f"{message.from_user.first_name}'s feedback is not good!!")
+    elif 1 < WORD_COUNT < 5:
+        print(f"{message.from_user.first_name}'s feedback quality is normal")
+    elif 6 < WORD_COUNT < 12:
+        print(f"{message.from_user.first_name}'s feedback quality is good")
+    elif 12 < WORD_COUNT:
+        print(f"{message.from_user.first_name}'s feedback is super quality")
+    tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {len(message.text.split())}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n<i>*Add more feedbacks or click finish to finish this process!</i>"
     reply_markup = ReplyKeyboardMarkup(buttons.FINISH_FEEDBACK_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
     message.reply(
         text=tet,
@@ -304,6 +321,7 @@ def fbb(bot, message):
 
 @bot.on_callback_query()
 def callback_query(Client, CallbackQuery):
+    global a
     if CallbackQuery.data == "🧊":
         CallbackQuery.edit_message_text(
             captcha_text.PASS_CAPTCHA
@@ -320,6 +338,37 @@ def callback_query(Client, CallbackQuery):
             captcha_text.FAIL_CAPTCHA,
             reply_markup=InlineKeyboardMarkup(captcha_buttons.WRONG_CAPTCHA)
         )
+
+    if CallbackQuery.data == "one_star":
+        e = CallbackQuery.edit_message_text(
+            "**Your ratings**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+        )
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{e.text}")
+
+
+    elif CallbackQuery.data == "two_star":
+        d = CallbackQuery.edit_message_text(
+            "**Your ratings**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+        )
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{d.text}")
+
+    if CallbackQuery.data == "three_star":
+        c = CallbackQuery.edit_message_text(
+            "**Your ratings**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+        )
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{c.text}")
+
+    elif CallbackQuery.data == "four_star":
+        b = CallbackQuery.edit_message_text(
+            "**Your ratings**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+        )
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{b.text}")
+
+    if CallbackQuery.data == "five_star":
+        a = CallbackQuery.edit_message_text(
+            "**Your ratings**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+        )
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}")
 
 
 print("Bot is alive📶✨")

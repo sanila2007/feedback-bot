@@ -6,7 +6,9 @@
 # Don't forget to follow github.com/sanila2007 because I'm doing these things for free and open source
 # Star and fork and enjoy!
 
+
 import pyrogram
+from plugins import quotes_text
 
 
 FEEDBACK_REPLY_TEXT = "First please select a bot!!👮"
@@ -22,17 +24,14 @@ REPLY_MESSAGE = "Hello dear, You can ue this bot to✨,\n\n" \
 
 LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
-START_TEXT_CAPTION_TEXT = "Hello user💖,\n\n" \
-                          "◇───────────────◇\n\n" \
+START_TEXT_CAPTION_TEXT = f"Hello,\n\n" \
                           "**These are the bots that created by Sanila🙇‍♂.**\n\n" \
                           "▬▬▬ ◈ <a href=https://t.me/songdownload597_bot>Song Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/torrentdownloader88_bot>Torrent Download Bot</a>\n" \
-                          "▬▬▬ ◈ <a href=https://t.me/youtubevideodownloader45_bot>Youtube Vide Download Bot</a>\n\n" \
-                          "◇───────────────◇\n\n" \
+                          "▬▬▬ ◈ <a href=https://t.me/youtubevideodownloader45_bot>Youtube Vide Download Bot</a>\n" \
+                          "▬▬▬ ◈ <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
                           "**CAPTCHA** - Prove yourself that **YOU ARE A HUMAN!** /captcha\n\n" \
-                          "☘️Developer : ``<i>Sanila Ranatunga</i>``\n\n" \
-                          "**𝟸𝟶𝟸𝟷-𝟸𝟶𝟸𝟸©**\n\n" \
-                          "◇───────────────◇"
+                          f"{quotes_text.GENERATED_QUOTE1}"
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 
@@ -72,3 +71,5 @@ YOUTUBE_VIDEO_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t
                                 "◉ After you finish click <<**Finish📩**>>\n\n" \
                                 "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>"
 
+
+FEEDBACK_FINISH_TEXT = "Thanks for your feedback!\n\nYour valuable feedbacks help us to build our bots much friendly. When you sending your feedback please include a screenshot of it because it helps us to decide what is the error.\n\nIt usually takes about 48 hours to get back to you, please accept our apologies in advance for any reply that exceeds this time frame.\n\nFeedback Centre."

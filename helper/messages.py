@@ -10,7 +10,6 @@
 import pyrogram
 from plugins import quotes_text
 
-
 FEEDBACK_REPLY_TEXT = "First please select a bot!!👮"
 
 CONTACT_TEXT = "**Contact**\n\n√ You can connect with the admin from here.\n\n√ Type your message here and send.\n\n√ After you finish click <<**Finish📩**>>"
@@ -24,17 +23,17 @@ REPLY_MESSAGE = "Hello dear, You can ue this bot to✨,\n\n" \
 
 LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
-START_TEXT_CAPTION_TEXT = f"Hello,\n\n" \
-                          "**These are the bots that created by Sanila🙇‍♂.**\n\n" \
+START_TEXT_CAPTION_TEXT = "This is a multi functional bot that can give & collect feedbacks from" \
+                          "rom users and broadcast replies to them with cool functions such as rating bots, " \
+                          "completing captcha /captcha, learning bots with instant view files & etc...\n\n" \
+                          "These are the bots that created by Sanila🙇‍♂.\n\n" \
                           "▬▬▬ ◈ <a href=https://t.me/songdownload597_bot>Song Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/torrentdownloader88_bot>Torrent Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/youtubevideodownloader45_bot>Youtube Vide Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
-                          "**CAPTCHA** - Prove yourself that **YOU ARE A HUMAN!** /captcha\n\n" \
-                          f"{quotes_text.GENERATED_QUOTE1}"
+                          "<i>*Note: When sending feedbacks through this bot **DO NOT SEND FEEDBACKS DIRECTLY** because those aren't accepted. Therefore please use **FEEDBACK OR CONTACT SECTIONS!!**</i>\n\n"
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
-
 
 CHANGELOG_TEXT = "**Changelog**\n\n" \
                  "🆅0.8\n ⁕Added CAPTCHA /captcha\n ⁕Added facility to rate bots\n ⁕Added log channel (admin only)\n ⁕Instant view supports\n ⁕Added ForceReply\n ⁕Feedback improvements\n ⁕Stickers has been restricted\n ⁕Minor bug fixes\n\n  " \
@@ -49,7 +48,6 @@ CREDITS_TEXT = "**Credits**\n\nThis bot was created under **GNU General Public L
                "\n\nSpecial thanks to,\n" \
                "      »<a href=https://github.com/sanila2007>Sanila Ranatunga</a>\n" \
                "      »<a href=https://github.com/pyrogram/pyrogram>Pyrogram</a>"
-
 
 SANILA_ASSISTANT_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/sanilaassistant_bot> Sanila's Assistant Bot</a>\n\n" \
                         "◉ Type your report here and send it\n\n" \
@@ -71,5 +69,20 @@ YOUTUBE_VIDEO_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t
                                 "◉ After you finish click <<**Finish📩**>>\n\n" \
                                 "◉ You will get answer for your feedback/report around <b><b>48hours.</b></b>"
 
-
 FEEDBACK_FINISH_TEXT = "Thanks for your feedback!\n\nYour valuable feedbacks help us to build our bots much friendly. When you sending your feedback please include a screenshot of it because it helps us to decide what is the error.\n\nIt usually takes about 48 hours to get back to you, please accept our apologies in advance for any reply that exceeds this time frame.\n\nFeedback Centre."
+
+DONT_SEND = "Telegraph Uploader\n\nA telegram bot which can upload media such as images, videos & animations to the telegra.ph"
+
+DONT_SEND2 = "Feedback Bot\n\nMulti functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>"
+
+DONT_SEND3 = "Music Download Bot\n\nOne of the most powerful Song download bot found on Telegram...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>"
+
+DONT_SEND4 = "Text to File Bot\n\nTEXT TO FILE BOT JUST SENT YOUR CODE OR TEXT MESSAGE THEN I WILL CONVERT IT INTO FILE\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>"
+
+DONT_SEND5 = "QR Code Generator Bot\n\nTelegram Bot that can generate QR codes\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>"
+
+DONT_SEND6 = "Youtube Video Bot\n\nTelegram bot that can download videos, thumbnail and playlist videos from Youtube VERY QUICKLY.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>"
+
+DONT_SEND7 = "Torrent Search Bot\n\nTelegram Bot that can search & download torrents from YTS, Piratebay, Anime, etc...\n\nDEVELOPER : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>"
+
+DONT_SEND8 = "Random Name Generator Bot\n\nTelegram bot that can generate random names for their users.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>"

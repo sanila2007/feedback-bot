@@ -15,6 +15,7 @@ from plugins import date_info, ratings, quotes_text
 from Captcha import captcha_buttons, captcha_text
 from pyrogram import Client, filters
 from config import Config
+from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 
 bot = Client(
     "bot",
@@ -24,13 +25,189 @@ bot = Client(
 )
 
 
+@bot.on_inline_query()
+def inlinequery(client, inline_query):
+    inline_query.answer(
+        results=[
+            InlineQueryResultArticle(
+                title="Telegraph Uploader Bot",
+                description="A telegram bot which can upload media such as images, videos & animations to the telegra.ph",
+                input_message_content=InputTextMessageContent(
+                    "Telegraph Uploader\n\nA telegram bot which can upload media such as images, videos & animations to the telegra.ph"
+                ),
+                url="https://t.me/telegraph200_bot",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.ne/telegraph200_bot")
+                        ]
+                    ]
+                ),
+            ),
+            InlineQueryResultArticle(
+                title="Feedback Bot",
+                description="Multi functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...",
+                input_message_content=InputTextMessageContent(
+                    "Feedback Bot\n\nMulti functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/sanilaassistant_bot",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/sanilaassistant_bot")
+                        ]
+                    ]
+                ),
+            ),
+            InlineQueryResultArticle(
+                title="Song Downloader Bot",
+                description="One of the most powerful song download bot found on Telegram...",
+                input_message_content=InputTextMessageContent(
+                    "Music Download Bot\n\nOne of the most powerful Song download bot found on Telegram...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/songdownload597_bot",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/songdownload597_bot")
+                        ]
+                    ]
+                ),
+            ),
+            InlineQueryResultArticle(
+                title="Text to File Bot",
+                description="Send any code or text message to this bot then it will convert it into file...",
+                input_message_content=InputTextMessageContent(
+                    "Text to File Bot\n\nTEXT TO FILE BOT JUST SENT YOUR CODE OR TEXT MESSAGE THEN I WILL CONVERT IT INTO FILE\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/hb_text_to_file_bot",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/hb_text_to_file_bot")
+                        ]
+                    ]
+                ),
+            ),
+
+            InlineQueryResultArticle(
+                title="QR Code Generator Bot",
+                description="Telegram Bot that can generate QR codes",
+                input_message_content=InputTextMessageContent(
+                    "QR Code Generator Bot\n\nTelegram Bot that can generate QR codes\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/HB_QR_CODE_BOT",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_QR_CODE_BOT")
+                        ]
+                    ]
+                ),
+            ),
+
+            InlineQueryResultArticle(
+                title="Youtube Video Downloader Bot",
+                description="Telegram bot that can download videos, thumbnail and playlist videos from Youtube",
+                input_message_content=InputTextMessageContent(
+                    "Youtube Video Bot\n\nTelegram bot that can download videos, thumbnail and playlist videos from Youtube VERY QUICKLY.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/HB_YOUTUBE_BOT",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_YOUTUBE_BOT")
+                        ]
+                    ]
+                ),
+            ),
+            InlineQueryResultArticle(
+                title="Torrent Search Bot",
+                description="Telegram Bot that can search & download torrents from YTS, Piratebay, Anime, etc...",
+                input_message_content=InputTextMessageContent(
+                    "Torrent Search Bot\n\nTelegram Bot that can search & download torrents from YTS, Piratebay, Anime, etc...\n\nDEVELOPER : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/torrentdownload88_bot",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/torrentdownload88_bot")
+                        ]
+                    ]
+                ),
+            ),
+            InlineQueryResultArticle(
+                title="Random Name Generator Bot",
+                description="A bot that can generate random name for you",
+                input_message_content=InputTextMessageContent(
+                    "Random Name Generator Bot\n\nTelegram bot that can generate random names for their users.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    disable_web_page_preview=True
+                ),
+                url="https://t.me/HB_RANDOM_NAME_GENERATOR_BOT",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_RANDOM_NAME_GENERATOR_BOT")
+                        ]
+                    ]
+                ),
+            )
+        ],
+        cache_time=1
+    )
+
+
 # START MESSAGE
+
+@bot.on_message(filters.regex(messages.DONT_SEND))
+def reeepl(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND2))
+def suul(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND3))
+def rl(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND4))
+def rl(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND5))
+def rl(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND6))
+def rl(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND7))
+def rl(bot, message):
+    bot.send_message(message.chat.id, None)
+
+
+@bot.on_message(filters.regex(messages.DONT_SEND8))
+def rl(bot, message):
+    bot.send_message(message.chat.id, None)
+
 
 @bot.on_message(filters.command("start") & filters.private)
 async def command1(bot, message):
-    await bot.send_photo(message.chat.id, "https://telegra.ph/file/f7dc9203585394d0595b1.jpg",
-                         caption=messages.START_TEXT_CAPTION_TEXT),
-    text = "Use ReplyKeyboard..."
+    text = f"Hello {message.from_user.first_name}\n\n"+messages.START_TEXT_CAPTION_TEXT
     reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
     await message.reply(
         text=text,
@@ -43,7 +220,7 @@ async def command1(bot, message):
 
 # Learn bots section
 
-@bot.on_message(filters.regex("Learn Bots"))
+@bot.on_message(filters.regex(pattern="Learn Bots"))
 def reply_to_Learn_Bots(bot, message):
     text = messages.LEARN_TEXT
     reply_markup = ReplyKeyboardMarkup(buttons.LEARN_REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
@@ -61,24 +238,24 @@ async def restric_sticker(bot, message):
     bot.send_message(message.chat.id, "Oops!\n\nStickers has been restricted")
 
 
-@bot.on_message(filters.regex("Song Download Bot🤖💖"))
+@bot.on_message(filters.regex(pattern="Song Download Bot🤖💖"))
 def reply_to_utube(bot, message):
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-Song-Downloader-Bot-07-09")
 
 
-@bot.on_message(filters.regex("Torrent Download Bot🤖💖"))
+@bot.on_message(filters.regex(pattern="Torrent Download Bot🤖💖"))
 def reply_to_s_on(bot, message):
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Torrent-Downloader-Bot-07-09")
 
 
-@bot.on_message((filters.regex("Youtube Video Download Bot🤖💖")))
+@bot.on_message((filters.regex(pattern="Youtube Video Download Bot🤖💖")))
 def reply_to_s_ong(bot, message):
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Youtube-Video-Downloader-Bot-07-09")
 
 
 # About bot section
 
-@bot.on_message(filters.regex("About Bot"))
+@bot.on_message(filters.regex(pattern="About Bot"))
 def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
@@ -93,14 +270,14 @@ def reply_to_AboutBot(bot, message):
 
 # Contact section
 
-@bot.on_message(filters.regex("Contact 📞"))
+@bot.on_message(filters.regex(pattern="Contact 📞"))
 def reply_to_Contact(bot, message):
     bot.send_message(message.chat.id, messages.CONTACT_TEXT)
 
 
 # About Developer
 
-@bot.on_message(filters.regex("About Developer"))
+@bot.on_message(filters.regex(pattern="About Developer"))
 def reply_to_About(bot, message):
     bot.send_message(message.chat.id,
                      "**<ins>About Developer</ins>**\n\n""❖ Name : Sanila Ranatunga\n\n""❖ Age : 15 Years (2022)\n\n""❖ Birthday : 09.01.2007\n\n""❖ From : Sri Lanka\n\n""❖ Skills : Programmer , Developer\n\n""❖ Ambition : Be a software engineer\n\n""❖ Languages : Python, HTML, CSS, JS\n\n❖ Still Learning : C++, Java")
@@ -108,7 +285,7 @@ def reply_to_About(bot, message):
 
 # Home
 
-@bot.on_message(filters.regex("Home"))
+@bot.on_message(filters.regex(pattern="Home"))
 def greet(bot, message):
     text = messages.REPLY_MESSAGE
     reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
@@ -120,7 +297,7 @@ def greet(bot, message):
     )
 
 
-@bot.on_message(filters.regex("Finish"))
+@bot.on_message(filters.regex(pattern="Finish"))
 def reply_finish(bot, message):
     bot.send_message(message.chat.id, messages.FEEDBACK_FINISH_TEXT,
                      reply_markup=ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, resize_keyboard=True,
@@ -129,7 +306,7 @@ def reply_finish(bot, message):
 
 # Feedbacks section
 
-@bot.on_message(filters.regex("Feedback"))
+@bot.on_message(filters.regex(pattern="Feedbacks"))
 def reply_to_Feedback(bot, message):
     text = messages.FEEDBACK_REPLY_TEXT
     reply_markup = ReplyKeyboardMarkup(buttons.FEEDBACK_REPLY_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
@@ -141,7 +318,7 @@ def reply_to_Feedback(bot, message):
 
 # Credits
 
-@bot.on_message(filters.regex("Credits"))
+@bot.on_message(filters.regex(pattern="Credits"))
 def reply_to_Credits(bot, message):
     text = messages.CREDITS_TEXT
     reply_markup = ReplyKeyboardMarkup(buttons.HOME_BUTTON_CR, one_time_keyboard=False, resize_keyboard=True)
@@ -154,7 +331,7 @@ def reply_to_Credits(bot, message):
 
 # Changelog Section
 
-@bot.on_message(filters.regex("Changelog"))
+@bot.on_message(filters.regex(pattern="Changelog"))
 def reply_to_Changelog(bot, message):
     reply_markup = ReplyKeyboardMarkup(buttons.HOME_BUTTON_CR, resize_keyboard=True, one_time_keyboard=False)
     bot.send_message(message.chat.id, messages.CHANGELOG_TEXT, disable_web_page_preview=True, reply_markup=reply_markup)
@@ -162,17 +339,17 @@ def reply_to_Changelog(bot, message):
 
 # Assistant Bot Feedback/Report bugs centre
 
-@bot.on_message(filters.regex("Sanila Assistant Bot"))
-def reply_to_Assistant(bot, message):
+@bot.on_message(filters.regex(pattern="Sanila Assistant Bot"))
+async def reply_to_Assistant(bot, message):
     reply_markup = ForceReply(message.chat.id)
-    bot.send_message(message.chat.id, messages.SANILA_ASSISTANT_TEXT,
-                     reply_markup=reply_markup
-                     , disable_web_page_preview=True)
+    await bot.send_message(message.chat.id, messages.SANILA_ASSISTANT_TEXT,
+                           reply_markup=reply_markup
+                           , disable_web_page_preview=True)
 
 
 # Reporting area - Song Downloader bot
 
-@bot.on_message(filters.regex("Song Downloader Bot"))
+@bot.on_message(filters.regex(pattern="Song Downloader Bot"))
 def reply_to_Song(bot, message):
     reply_markup = ForceReply(message.chat.id)
     text = messages.SONG_DOWNLOADER_TEXT
@@ -185,7 +362,7 @@ def reply_to_Song(bot, message):
 
 # Rating bots
 
-@bot.on_message(filters.regex("Rate Bot"))
+@bot.on_message(filters.regex(pattern="Rate Bot"))
 def reply_to_rate_bots(bot, message):
     text = ratings.RATINGS_TEXT
     reply_markup = ReplyKeyboardMarkup(ratings.RATINGS_BUTTONS, resize_keyboard=True, one_time_keyboard=False)
@@ -220,7 +397,7 @@ RATING_BOT = InlineKeyboardMarkup(
 
 # Rating bots
 
-@bot.on_message(filters.regex("Assistant Bot"))
+@bot.on_message(filters.regex(pattern="Assistant Bot"))
 def reply_to_rating_assistant(bot, message):
     reply_markup = RATING_BOT
     bot.send_message(message.chat.id,
@@ -230,7 +407,7 @@ def reply_to_rating_assistant(bot, message):
                      f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
-@bot.on_message(filters.regex("Torrent Bot"))
+@bot.on_message(filters.regex(pattern="Torrent Bot"))
 def reply_to_rating_assistant(bot, message):
     reply_markup = RATING_BOT
     bot.send_message(message.chat.id,
@@ -240,7 +417,7 @@ def reply_to_rating_assistant(bot, message):
                      f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
-@bot.on_message(filters.regex("Youtube Bot"))
+@bot.on_message(filters.regex(pattern="Youtube Bot"))
 def reply_to_rating_assistant(bot, message):
     reply_markup = RATING_BOT
     bot.send_message(message.chat.id,
@@ -250,7 +427,7 @@ def reply_to_rating_assistant(bot, message):
                      f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
 
 
-@bot.on_message(filters.regex("Song Bot"))
+@bot.on_message(filters.regex(pattern="Song Bot"))
 async def reply_to_rating_assistant(bot, message):
     reply_markup = RATING_BOT
     await bot.send_message(message.chat.id,
@@ -262,7 +439,7 @@ async def reply_to_rating_assistant(bot, message):
 
 # Reporting area - Torrent downloader bot
 
-@bot.on_message(filters.regex("Torrent Downloader Bot"))
+@bot.on_message(filters.regex(pattern="Torrent Downloader Bot"))
 async def reply_to_Torrent(bot, message):
     reply_markup = ForceReply(message.chat.id)
     text = messages.TORRENT_DOWNLOADER_TEXT
@@ -275,7 +452,7 @@ async def reply_to_Torrent(bot, message):
 
 # Reporting area - Youtube video downloader bot
 
-@bot.on_message(filters.regex("Youtube Video Downloader Bot"))
+@bot.on_message(filters.regex(pattern="Youtube Video Downloader Bot"))
 def reply_to_Youtube(bot, message):
     text = messages.YOUTUBE_VIDEO_DOWNLOADER_TEXT
     reply_markup = ForceReply(message.chat.id)
@@ -297,7 +474,7 @@ def captch(bot, message):
     )
 
 
-@bot.on_message(filters.private)
+@bot.on_message(filters.reply)
 def fbb(bot, message):
     WORD_COUNT = len(message.text.split())
     if WORD_COUNT == 1:
@@ -308,14 +485,13 @@ def fbb(bot, message):
         print(f"{message.from_user.first_name}'s feedback quality is good")
     elif 12 < WORD_COUNT:
         print(f"{message.from_user.first_name}'s feedback is super quality")
-    tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {len(message.text.split())}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n<i>*Add more feedbacks or click finish to finish this process!</i>"
+    tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {len(message.text.split())}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n{quotes_text.GENERATED_QUOTE1}"
     reply_markup = ReplyKeyboardMarkup(buttons.FINISH_FEEDBACK_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
     message.reply(
         text=tet,
         reply_markup=reply_markup,
         quote=True
     )
-
     bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet)
 
 

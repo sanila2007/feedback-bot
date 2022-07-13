@@ -25,9 +25,4 @@ ALL_QUOTE = QUOTE1, QUOTE2, QUOTE3, QUOTE6, QUOTE5, QUOTE4
 length = 1
 
 GENERATED_QUOTE1 = "".join(random.sample(ALL_QUOTE, length))
-GENERATED_QUOTE2 = "".join(random.sample(ALL_QUOTE, length))
-GENERATED_QUOTE3 = "".join(random.sample(ALL_QUOTE, length))
-GENERATED_QUOTE4 = "".join(random.sample(ALL_QUOTE, length))
-GENERATED_QUOTE5 = "".join(random.sample(ALL_QUOTE, length))
-GENERATED_QUOTE6 = "".join(random.sample(ALL_QUOTE, length))
 

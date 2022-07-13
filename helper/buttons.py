@@ -29,7 +29,7 @@ REPLY_BUTTONS = [
     ],
     [
         ("Learn Bots 👨‍🏫"),
-        ("Feedback 📝")
+        ("Feedbacks 📝")
     ],
     [
         ("Rate Bots ⭐"),

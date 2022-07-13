@@ -31,7 +31,7 @@ START_TEXT_CAPTION_TEXT = "This is a multi functional bot that can give & collec
                           "▬▬▬ ◈ <a href=https://t.me/torrentdownloader88_bot>Torrent Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/youtubevideodownloader45_bot>Youtube Vide Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
-                          "<i>*Note: When sending feedbacks through this bot **DO NOT SEND FEEDBACKS DIRECTLY** because those aren't accepted. Therefore please use **FEEDBACK OR CONTACT SECTIONS!!**</i>\n\n"
+                          "<i>*Note: When sending feedbacks through this bot **DO NOT SEND FEEDBACKS DIRECTLY** because those aren't accepted. Therefore please use **FEEDBACK OR CONTACT SECTIONS!!**</i>\n\nUse `@sanilaassistant_bot` inline mode for get the bot list."
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 

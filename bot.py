@@ -7,7 +7,7 @@
 # Star and fork and enjoy!
 
 
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ForceReply, InputMediaPhoto
 
 from helper import buttons, messages
@@ -32,8 +32,9 @@ def inlinequery(client, inline_query):
             InlineQueryResultArticle(
                 title="Telegraph Uploader Bot",
                 description="A telegram bot which can upload media such as images, videos & animations to the telegra.ph",
+                thumb_url="https://telegra.ph/file/8edc5c1131bcc8a691a3c.jpg",
                 input_message_content=InputTextMessageContent(
-                    "Telegraph Uploader\n\nA telegram bot which can upload media such as images, videos & animations to the telegra.ph"
+                    "**Telegraph Uploader**\n\nA telegram bot which can upload media such as images, videos & animations to the telegra.ph"
                 ),
                 url="https://t.me/telegraph200_bot",
                 reply_markup=InlineKeyboardMarkup(
@@ -46,9 +47,10 @@ def inlinequery(client, inline_query):
             ),
             InlineQueryResultArticle(
                 title="Feedback Bot",
+                thumb_url="https://telegra.ph/file/e997ee0ea8bc354e77d3d.jpg",
                 description="Multi functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...",
                 input_message_content=InputTextMessageContent(
-                    "Feedback Bot\n\nMulti functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
+                    "**Feedback Bot**\n\nMulti functional bot that can give & collect feedbacks from users and broadcast replies to them with cool functions such as rating bots, completing captchas & etc...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/sanilaassistant_bot",
@@ -62,9 +64,10 @@ def inlinequery(client, inline_query):
             ),
             InlineQueryResultArticle(
                 title="Song Downloader Bot",
+                thumb_url="https://telegra.ph/file/79f269c5db774fb4e732d.jpg",
                 description="One of the most powerful song download bot found on Telegram...",
                 input_message_content=InputTextMessageContent(
-                    "Music Download Bot\n\nOne of the most powerful Song download bot found on Telegram...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
+                    "**Music Download Bot**\n\nOne of the most powerful Song download bot found on Telegram...\n\nDeveloper : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/songdownload597_bot",
@@ -78,9 +81,10 @@ def inlinequery(client, inline_query):
             ),
             InlineQueryResultArticle(
                 title="Text to File Bot",
+                thumb_url="https://telegra.ph/file/cc1c4c375f60c649a70a7.jpg",
                 description="Send any code or text message to this bot then it will convert it into file...",
                 input_message_content=InputTextMessageContent(
-                    "Text to File Bot\n\nTEXT TO FILE BOT JUST SENT YOUR CODE OR TEXT MESSAGE THEN I WILL CONVERT IT INTO FILE\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    "**Text to File Bot**\n\nTEXT TO FILE BOT JUST SENT YOUR CODE OR TEXT MESSAGE THEN I WILL CONVERT IT INTO FILE\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/hb_text_to_file_bot",
@@ -95,9 +99,10 @@ def inlinequery(client, inline_query):
 
             InlineQueryResultArticle(
                 title="QR Code Generator Bot",
+                thumb_url="https://telegra.ph/file/cc1c4c375f60c649a70a7.jpg",
                 description="Telegram Bot that can generate QR codes",
                 input_message_content=InputTextMessageContent(
-                    "QR Code Generator Bot\n\nTelegram Bot that can generate QR codes\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    "**QR Code Generator Bot**\n\nTelegram Bot that can generate QR codes\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/HB_QR_CODE_BOT",
@@ -112,9 +117,10 @@ def inlinequery(client, inline_query):
 
             InlineQueryResultArticle(
                 title="Youtube Video Downloader Bot",
+                thumb_url="https://telegra.ph/file/c846b61802788f8d6af86.jpg",
                 description="Telegram bot that can download videos, thumbnail and playlist videos from Youtube",
                 input_message_content=InputTextMessageContent(
-                    "Youtube Video Bot\n\nTelegram bot that can download videos, thumbnail and playlist videos from Youtube VERY QUICKLY.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    "**Youtube Video Bot**\n\nTelegram bot that can download videos, thumbnail and playlist videos from Youtube VERY QUICKLY.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/HB_YOUTUBE_BOT",
@@ -128,9 +134,10 @@ def inlinequery(client, inline_query):
             ),
             InlineQueryResultArticle(
                 title="Torrent Search Bot",
+                thumb_url="https://telegra.ph/file/89639d2a177ba4a4e8ea3.jpg",
                 description="Telegram Bot that can search & download torrents from YTS, Piratebay, Anime, etc...",
                 input_message_content=InputTextMessageContent(
-                    "Torrent Search Bot\n\nTelegram Bot that can search & download torrents from YTS, Piratebay, Anime, etc...\n\nDEVELOPER : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
+                    "**Torrent Search Bot**\n\nTelegram Bot that can search & download torrents from YTS, Piratebay, Anime, etc...\n\nDEVELOPER : <a href=https://github.com/sanila2007>Sanila Ranatunga</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/torrentdownload88_bot",
@@ -144,9 +151,10 @@ def inlinequery(client, inline_query):
             ),
             InlineQueryResultArticle(
                 title="Random Name Generator Bot",
+                thumb_url="https://telegra.ph/file/cc1c4c375f60c649a70a7.jpg",
                 description="A bot that can generate random name for you",
                 input_message_content=InputTextMessageContent(
-                    "Random Name Generator Bot\n\nTelegram bot that can generate random names for their users.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
+                    "**Random Name Generator Bot**\n\nTelegram bot that can generate random names for their users.\n\nDEVELOPER : <a href=https://github.com/hbbots>Amal Mohan</a>",
                     disable_web_page_preview=True
                 ),
                 url="https://t.me/HB_RANDOM_NAME_GENERATOR_BOT",
@@ -164,46 +172,6 @@ def inlinequery(client, inline_query):
 
 
 # START MESSAGE
-
-@bot.on_message(filters.regex(messages.DONT_SEND))
-def reeepl(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND2))
-def suul(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND3))
-def rl(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND4))
-def rl(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND5))
-def rl(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND6))
-def rl(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND7))
-def rl(bot, message):
-    bot.send_message(message.chat.id, None)
-
-
-@bot.on_message(filters.regex(messages.DONT_SEND8))
-def rl(bot, message):
-    bot.send_message(message.chat.id, None)
-
 
 @bot.on_message(filters.command("start") & filters.private)
 async def command1(bot, message):
@@ -235,21 +203,25 @@ def reply_to_Learn_Bots(bot, message):
 
 @bot.on_message(filters.sticker)
 async def restric_sticker(bot, message):
-    bot.send_message(message.chat.id, "Oops!\n\nStickers has been restricted")
+    await bot.send_chat_action(message.chat.id, enums.ChatAction.CANCEL)
+    await bot.send_message(message.chat.id, "Oops!\n\nStickers has been restricted")
 
 
 @bot.on_message(filters.regex(pattern="Song Download Bot🤖💖"))
 def reply_to_utube(bot, message):
+    bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-Song-Downloader-Bot-07-09")
 
 
 @bot.on_message(filters.regex(pattern="Torrent Download Bot🤖💖"))
 def reply_to_s_on(bot, message):
+    bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Torrent-Downloader-Bot-07-09")
 
 
 @bot.on_message((filters.regex(pattern="Youtube Video Download Bot🤖💖")))
 def reply_to_s_ong(bot, message):
+    bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Youtube-Video-Downloader-Bot-07-09")
 
 
@@ -260,7 +232,7 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: 11/21/2021\n\n"
-                                      "Latest Version:  v0.8.2\n\n"
+                                      "Latest Version:  v0.8.4\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -272,7 +244,7 @@ def reply_to_AboutBot(bot, message):
 
 @bot.on_message(filters.regex(pattern="Contact 📞"))
 def reply_to_Contact(bot, message):
-    bot.send_message(message.chat.id, messages.CONTACT_TEXT)
+    bot.send_message(message.chat.id, messages.CONTACT_TEXT, reply_markup=ForceReply(message.chat.id))
 
 
 # About Developer
@@ -364,6 +336,7 @@ def reply_to_Song(bot, message):
 
 @bot.on_message(filters.regex(pattern="Rate Bot"))
 def reply_to_rate_bots(bot, message):
+    bot.send_chat_action(message.chat.id, enums.ChatAction.SPEAKING)
     text = ratings.RATINGS_TEXT
     reply_markup = ReplyKeyboardMarkup(ratings.RATINGS_BUTTONS, resize_keyboard=True, one_time_keyboard=False)
     message.reply(
@@ -476,16 +449,8 @@ def captch(bot, message):
 
 @bot.on_message(filters.reply)
 def fbb(bot, message):
-    WORD_COUNT = len(message.text.split())
-    if WORD_COUNT == 1:
-        print(f"{message.from_user.first_name}'s feedback is not good!!")
-    elif 1 < WORD_COUNT < 5:
-        print(f"{message.from_user.first_name}'s feedback quality is normal")
-    elif 6 < WORD_COUNT < 12:
-        print(f"{message.from_user.first_name}'s feedback quality is good")
-    elif 12 < WORD_COUNT:
-        print(f"{message.from_user.first_name}'s feedback is super quality")
-    tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {len(message.text.split())}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n{quotes_text.GENERATED_QUOTE1}"
+    bot.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+    tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {len(message.text.split())}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n<i>*Note: Add more feedbacks or click finish</i>"
     reply_markup = ReplyKeyboardMarkup(buttons.FINISH_FEEDBACK_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
     message.reply(
         text=tet,
@@ -493,6 +458,7 @@ def fbb(bot, message):
         quote=True
     )
     bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet)
+
 
 
 @bot.on_callback_query()

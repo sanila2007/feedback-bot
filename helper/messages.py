@@ -14,20 +14,18 @@ FEEDBACK_REPLY_TEXT = "First please select a bot!!👮"
 
 CONTACT_TEXT = "**Contact**\n\n√ You can connect with the admin from here.\n\n√ Type your message here and send.\n\n√ After you finish click <<**Finish📩**>>"
 
-REPLY_MESSAGE = f"{quotes_text.GENERATED_QUOTE1}\n\n" \
-                "*Note: Click any button from ReplyKeyboard as your choice. Don't send feedbacks DIRECTLY. Use CONTACT or FEEDBACK sections. WE DO NOT COLLECT DIRECT FEEDBACKS."
+REPLY_MESSAGE = "*Note: Click any button from ReplyKeyboard as your choice. Don't send feedbacks DIRECTLY. Use CONTACT or FEEDBACK sections. **WE DO NOT COLLECT DIRECT FEEDBACKS.**\n\nUse `@sanilaassistant_bot` for get the BOT LIST in inline mode."
 
 LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
 START_TEXT_CAPTION_TEXT = "This is a multi functional bot that can give & collect feedbacks from" \
-                          "rom users and broadcast replies to them with cool functions such as rating bots, " \
-                          "completing captcha /captcha, learning bots with instant view files & etc...\n\n" \
-                          "These are the bots that created by Sanila,\n\n" \
+                          " users and broadcast replies to them.\n\n" \
+                          "Some of my bots,\n" \
                           "▬▬▬ ◈ <a href=https://t.me/songdownload597_bot>Song Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/torrentdownloader88_bot>Torrent Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/youtubevideodownloader45_bot>Youtube Vide Download Bot</a>\n" \
                           "▬▬▬ ◈ <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
-                          "<i>*Note:</i> When sending feedbacks through this bot **DO NOT SEND FEEDBACKS DIRECTLY** because those aren't accepted. Therefore please use **FEEDBACK OR CONTACT SECTIONS!!**\n\n"
+                          "<i>*Note:</i> When sending feedbacks through this bot **DO NOT SEND FEEDBACKS DIRECTLY** because those aren't accepted. Therefore please use **FEEDBACK OR CONTACT SECTIONS!!**\n\nUse `@sanilaassistant_bot` for get the BOT LIST in inline mode."
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 

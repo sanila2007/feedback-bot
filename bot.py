@@ -16,6 +16,8 @@ from Captcha import captcha_buttons, captcha_text
 from pyrogram import Client, filters
 from config import Config
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
+from pyrogram.errors import UsernameNotOccupied
+
 
 bot = Client(
     "bot",
@@ -41,6 +43,12 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.ne/telegraph200_bot")
+                        ],
+                        [
+                            InlineKeyboardButton("Repository here", url="https://github.com/sanila2007/telegraph-uploader-bot")
+                        ],
+                        [
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -58,6 +66,13 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.me/sanilaassistant_bot")
+                        ],
+                        [
+
+                            InlineKeyboardButton("Repository here", url="https://github.com/sanila2007/feedback-bot")
+                        ],
+                        [
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -75,6 +90,14 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.me/songdownload597_bot")
+                        ],
+                        [
+
+                            InlineKeyboardButton("Repository here",
+                                                 url="https://github.com/sanila2007/Telegram-Song-Downloader-Bot")
+                        ],
+                        [
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -92,6 +115,13 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.me/hb_text_to_file_bot")
+                        ],
+                        [
+
+                            InlineKeyboardButton("Repository here", url="https://github.com/hbbots/TEXT-TO-FILE-BOT")
+                        ],
+                        [
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -110,6 +140,13 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_QR_CODE_BOT")
+                        ],
+                        [
+
+                            InlineKeyboardButton("Repository here", url="https://github.com/hbbots/QR-COD-EBOT")
+                        ],
+                        [
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -128,6 +165,13 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_YOUTUBE_BOT")
+                        ],
+                        [
+
+                            InlineKeyboardButton("Repository here", url="https://github.com/hbbots/YOUTUBE-BOT")
+                        ],
+                        [
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -145,6 +189,10 @@ def inlinequery(client, inline_query):
                     [
                         [
                             InlineKeyboardButton("Reach the Bot", url="https://t.me/torrentdownload88_bot")
+                        ],
+                        [
+
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -161,7 +209,9 @@ def inlinequery(client, inline_query):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_RANDOM_NAME_GENERATOR_BOT")
+                            InlineKeyboardButton("Reach the Bot", url="https://t.me/HB_RANDOM_NAME_GENERATOR_BOT"),
+                            InlineKeyboardButton("Repository here", url="https://github.com/hbbots?tab=repositories"),
+                            InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
                         ]
                     ]
                 ),
@@ -170,21 +220,31 @@ def inlinequery(client, inline_query):
         cache_time=1
     )
 
+INLINE_BB = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("Inline Mode Bot list 🔎", switch_inline_query_current_chat="")
+        ]
+    ]
+)
+     
 
 # START MESSAGE
 
 @bot.on_message(filters.command("start") & filters.private)
 async def command1(bot, message):
-    text = f"Hello {message.from_user.first_name}\n\n"+messages.START_TEXT_CAPTION_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
+    text = f"Hello **{message.from_user.first_name}!**\n\n"+messages.START_TEXT_CAPTION_TEXT
+    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True) and INLINE_BB
     await message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
     )
-    await bot.send_message(Config.LOG_CHANNEL,
+    try:
+        await bot.send_message(Config.LOG_CHANNEL,
                            f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
-
+    except UsernameNotOccupied as error_start:
+        print("Unable to send the logs to the channel, may be an error in the username that given when deploying...")
 
 # Learn bots section
 
@@ -232,7 +292,7 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: 11/21/2021\n\n"
-                                      "Latest Version:  v0.8.4\n\n"
+                                      "Latest Version:  v0.8.5\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -260,7 +320,7 @@ def reply_to_About(bot, message):
 @bot.on_message(filters.regex(pattern="Home"))
 def greet(bot, message):
     text = messages.REPLY_MESSAGE
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
+    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True) and INLINE_BB
     message.reply(
         text=text,
         reply_markup=reply_markup,
@@ -321,7 +381,7 @@ async def reply_to_Assistant(bot, message):
 
 # Reporting area - Song Downloader bot
 
-@bot.on_message(filters.regex(pattern="Song Downloader Bot"))
+@bot.on_message(filters.regex("Song Downloader Bot"))
 def reply_to_Song(bot, message):
     reply_markup = ForceReply(message.chat.id)
     text = messages.SONG_DOWNLOADER_TEXT
@@ -457,7 +517,10 @@ def fbb(bot, message):
         reply_markup=reply_markup,
         quote=True
     )
-    bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet)
+    try:
+        bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet, reply_markup=ForceReply(message.chat.id))
+    except UsernameNotOccupied as e:
+        bot.send_message(message.chat.id, "Oops!!\n\nError occurred while sending feedback to the admin. If you are the developer, check that you have entered exact usernames(channel or groups) when deploying.")
 
 
 

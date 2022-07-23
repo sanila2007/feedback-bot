@@ -14,7 +14,7 @@ FEEDBACK_REPLY_TEXT = "First please select a bot!!👮"
 
 CONTACT_TEXT = "**Contact**\n\n√ You can connect with the admin from here.\n\n√ Type your message here and send.\n\n√ After you finish click <<**Finish📩**>>"
 
-REPLY_MESSAGE = "*Note: Click any button from ReplyKeyboard as your choice. Don't send feedbacks DIRECTLY. Use CONTACT or FEEDBACK sections. **WE DO NOT COLLECT DIRECT FEEDBACKS.**\n\nUse `@sanilaassistant_bot` for get the BOT LIST in inline mode."
+REPLY_MESSAGE = "Click any button from ReplyKeyboard as your choice. Don't send feedbacks directly. Use contact or feedback sections. **WE DO NOT COLLECT DIRECT FEEDBACKS.**\n\nUse `@sanilaassistant_bot` for get the BOT LIST in inline mode."
 
 LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
@@ -61,6 +61,11 @@ TORRENT_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/to
                           "◉ You will get answer for your feedback around <b><b>24hours.</b></b>"
 
 YOUTUBE_VIDEO_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/youtubevideodownloader45_bot>Youtube Video Downloader Bot</a>\n\n" \
+                                "◉ Type your report here and send it\n\n" \
+                                "◉ After you finish click <<**Finish📩**>>\n\n" \
+                                "◉ You will get answer for your feedback around <b><b>24hours.</b></b>"
+
+TELEGRAPH_UPLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
                                 "◉ Type your report here and send it\n\n" \
                                 "◉ After you finish click <<**Finish📩**>>\n\n" \
                                 "◉ You will get answer for your feedback around <b><b>24hours.</b></b>"

@@ -18,14 +18,12 @@ from config import Config
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UsernameNotOccupied
 
-
 bot = Client(
     "bot",
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN
 )
-
 
 @bot.on_inline_query()
 def inlinequery(client, inline_query):
@@ -45,7 +43,8 @@ def inlinequery(client, inline_query):
                             InlineKeyboardButton("Reach the Bot", url="https://t.ne/telegraph200_bot")
                         ],
                         [
-                            InlineKeyboardButton("Repository here", url="https://github.com/sanila2007/telegraph-uploader-bot")
+                            InlineKeyboardButton("Repository here",
+                                                 url="https://github.com/sanila2007/telegraph-uploader-bot")
                         ],
                         [
                             InlineKeyboardButton("Inline again 🔎", switch_inline_query_current_chat="")
@@ -220,6 +219,7 @@ def inlinequery(client, inline_query):
         cache_time=1
     )
 
+
 INLINE_BB = InlineKeyboardMarkup(
     [
         [
@@ -227,24 +227,29 @@ INLINE_BB = InlineKeyboardMarkup(
         ]
     ]
 )
-     
+
 
 # START MESSAGE
 
 @bot.on_message(filters.command("start") & filters.private)
 async def command1(bot, message):
-    text = f"Hello **{message.from_user.first_name}!**\n\n"+messages.START_TEXT_CAPTION_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True) and INLINE_BB
+    text = f"Hello **{message.from_user.first_name}!**\n\n" + messages.START_TEXT_CAPTION_TEXT
+    reply_markup = INLINE_BB
     await message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
     )
+    await message.reply(
+        "Use ReplyKeyboard or Inline Mode...",
+        reply_markup=ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
+    )
     try:
         await bot.send_message(Config.LOG_CHANNEL,
-                           f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
+                               f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
     except UsernameNotOccupied as error_start:
         print("Unable to send the logs to the channel, may be an error in the username that given when deploying...")
+
 
 # Learn bots section
 
@@ -292,7 +297,7 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: 11/21/2021\n\n"
-                                      "Latest Version:  v0.8.5\n\n"
+                                      "Latest Version:  v0.8.6\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -320,12 +325,15 @@ def reply_to_About(bot, message):
 @bot.on_message(filters.regex(pattern="Home"))
 def greet(bot, message):
     text = messages.REPLY_MESSAGE
-    reply_markup = ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True) and INLINE_BB
+    reply_markup = INLINE_BB
     message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
-
+    )
+    message.reply(
+        text="Use ReplyKeyboards or Inline Mode...",
+        reply_markup=ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
     )
 
 
@@ -437,7 +445,8 @@ def reply_to_rating_assistant(bot, message):
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
     bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
+                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Torrent Bot"))
@@ -447,7 +456,8 @@ def reply_to_rating_assistant(bot, message):
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
     bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
+                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Youtube Bot"))
@@ -457,7 +467,19 @@ def reply_to_rating_assistant(bot, message):
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
     bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
+                     protect_content=True)
+
+
+@bot.on_message(filters.regex(pattern="Telegraph Bot"))
+def reply_to_rating_assistant(bot, message):
+    reply_markup = RATING_BOT
+    bot.send_message(message.chat.id,
+                     f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
+                     reply_markup=reply_markup)
+    bot.send_message(Config.FEEDBACK_CHANNEL,
+                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
+                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Song Bot"))
@@ -467,7 +489,8 @@ async def reply_to_rating_assistant(bot, message):
                            f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                            reply_markup=reply_markup)
     await bot.send_message(Config.FEEDBACK_CHANNEL,
-                           f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}")
+                           f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
+                           protect_content=True)
 
 
 # Reporting area - Torrent downloader bot
@@ -496,6 +519,20 @@ def reply_to_Youtube(bot, message):
     )
 
 
+# Reporting area - Telegraph uploader bot
+
+
+@bot.on_message(filters.regex(pattern="Telegraph Uploader Bot"))
+def reply_to_Youtube(bot, message):
+    text = messages.TELEGRAPH_UPLOADER_TEXT
+    reply_markup = ForceReply(message.chat.id)
+    message.reply(
+        text=text,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True
+    )
+
+
 @bot.on_message(filters.private & filters.command("captcha"))
 def captch(bot, message):
     text = captcha_text.CAPTCHA_TEX_T
@@ -515,13 +552,15 @@ def fbb(bot, message):
     message.reply(
         text=tet,
         reply_markup=reply_markup,
-        quote=True
+        quote=True,
+        protect_content=True
     )
     try:
-        bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet, reply_markup=ForceReply(message.chat.id))
+        bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet, protect_content=True,
+                         reply_markup=ForceReply(message.chat.id))
     except UsernameNotOccupied as e:
-        bot.send_message(message.chat.id, "Oops!!\n\nError occurred while sending feedback to the admin. If you are the developer, check that you have entered exact usernames(channel or groups) when deploying.")
-
+        bot.send_message(message.chat.id,
+                         "Oops!!\n\nError occurred while sending feedback to the admin. If you are the developer, check that you have entered exact usernames(channel or groups) when deploying.")
 
 
 @bot.on_callback_query()
@@ -548,32 +587,37 @@ def callback_query(Client, CallbackQuery):
         e = CallbackQuery.edit_message_text(
             "**Your ratings**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{e.text}")
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{e.text}",
+                         protect_content=True)
 
 
     elif CallbackQuery.data == "two_star":
         d = CallbackQuery.edit_message_text(
             "**Your ratings**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{d.text}")
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{d.text}",
+                         protect_content=True)
 
     if CallbackQuery.data == "three_star":
         c = CallbackQuery.edit_message_text(
             "**Your ratings**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{c.text}")
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{c.text}",
+                         protect_content=True)
 
     elif CallbackQuery.data == "four_star":
         b = CallbackQuery.edit_message_text(
             "**Your ratings**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{b.text}")
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{b.text}",
+                         protect_content=True)
 
     if CallbackQuery.data == "five_star":
         a = CallbackQuery.edit_message_text(
             "**Your ratings**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}")
+        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+                         protect_content=True)
 
 
 print("Bot is alive📶✨")

@@ -18,6 +18,7 @@ RATINGS_BUTTONS = [
         ("Torrent Bot ✨")
     ],
     [
+        ("Telegraph Bot ✨"),
         ("Home 🔙")
     ]
 ]

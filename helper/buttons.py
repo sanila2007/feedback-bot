@@ -62,7 +62,8 @@ FEEDBACK_REPLY_BUTTONS = [
         ("Song Downloader Bot🤖💖")
     ],
     [
-        ("Torrent Downloader Bot🤖💖")
+        ("Torrent Downloader Bot🤖💖"),
+        ("Telegraph Uploader Bot🤖💖")
     ],
     [
         ("Home 🔙"),

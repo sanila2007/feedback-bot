@@ -36,8 +36,9 @@ features of this bot,<br>
        ● Collect feedbacks `admin(s) only`<br>
        ● Broadcast `admin(s) only`<br>
        ● Rate bots <br>
-       ● Captcha `/captcha`<br>
+       ● Captcha<br>
        ● Learn projects<br>
+       ● Inline Bot list<br>
        
 `Collect feedbacks`<br>
 
@@ -69,13 +70,31 @@ This feature is still testing on beta version. still developing. It will be avai
 
 This feature is not for anything but to enjoy. users can enjoy this by completing captcha. You can use `/captcha` command in this bot to prove yourself that you are a human. 
 
-`Deploying methods`
+`Inline Bot list`
 
-I have added two methods to host this bot. for that you can use either Heroku or Okteto. I recommend you to use Heroku because this bot had been faced issues when
-deploying to Okteto. but you can deploy it as your choice,<br><br>
+Using Inline mode, you can get the all the bot projects of me by using ```@sanilaassistant_bot``` in any chat. Very easy to share and get the bot repositories and the bot links.
+
+`Deploying methods` <br><br>
+There are two ways that you can deply this bot to cloud. Those are Okteto & Heroku. Heroku is te easiest way to deploy. If you are using Otketo you must create variables EXACTLY. Unless it will generate errors. For those don't tag the developer. You can deploy it as your choice,<br><br>
 ● Heroku - Easiest way to deloy<br>
-● Okteto - Create variables exactly<br> 
+● Okteto - Create variables exactly<br>
 
+<u><b>Variables for Okteto (Copy & Paste)</b></u><br><br>
+```
+API_ID
+``` 
+```
+API_HASH
+```
+```
+BOT_TOKEN
+``` 
+```
+LOG_CHANNEL
+```
+```
+FEEDBACK_CHANNEL
+``` 
   
 ## Deployment Methods
 

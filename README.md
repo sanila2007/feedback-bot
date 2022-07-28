@@ -75,7 +75,7 @@ This feature is not for anything but to enjoy. users can enjoy this by completin
 Using Inline mode, you can get the all the bot projects of me by using ```@sanilaassistant_bot``` in any chat. Very easy to share and get the bot repositories and the bot links.
 
 `Deploying methods` <br><br>
-There are two ways that you can deply this bot to cloud. Those are Okteto & Heroku. Heroku is te easiest way to deploy. If you are using Otketo you must create variables EXACTLY. Unless it will generate errors. For those don't tag the developer. You can deploy it as your choice,<br><br>
+There are two ways that you can deploy this bot to cloud. Those are Okteto & Heroku. Heroku is te easiest way to deploy. If you are using Otketo you must create variables EXACTLY. Unless it will generate errors. For those don't tag the developer. You can deploy it as your choice,<br><br>
 ● Heroku - Easiest way to deloy<br>
 ● Okteto - Create variables exactly<br>
 

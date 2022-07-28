@@ -25,11 +25,11 @@
             "required": true
         },
         "LOG_CHANNEL": {
-            "description": "Create a public channel and enter the username here",
+            "description": "Create a public channel and enter the username here. NOT THE LINK MUST BE THE USERNAME!!",
             "required": true
         },
         "FEEDBACK_CHANNEL": {
-            "description": "Create a public channel and enter the username here (optional)",
+            "description": "Create a public channel and enter the username here. NOT THE LINK MUST BE THE USERNAME!! (optional)",
             "required": false
         }
     },

@@ -6,37 +6,19 @@
 # Don't forget to follow github.com/sanila2007 because I'm doing these things for free and open source
 # Star and fork and enjoy!
 
-REPORT_BUGS_BUTTONS = [
-    [
-        ("Sanila Assistant Bot🤖💖")
-    ],
-    [
-        ("Song Downloader Bot🤖💖")
-    ],
-    [
-        ("Torrent Downloader Bot🤖💖")
-    ],
-    [
-        ("Home 🔙"),
-        ("Youtube Video Downloader Bot🤖💖")
-    ]
-]
 
 REPLY_BUTTONS = [
     [
-        ("About Developer ☘️"),
-        ("About Bot 🤖")
+        ("Feedbacks 📝"),
+        ("Rate Bots ⭐")
     ],
     [
         ("Learn Bots 👨‍🏫"),
-        ("Feedbacks 📝")
+        ("Contact 📞")
+
     ],
     [
-        ("Rate Bots ⭐"),
-        ("Credits 📈")
-    ],
-    [
-        ("Contact 📞"),
+        ("About Bot 🤖"),
         ("Changelog ♾️")
     ]
 ]
@@ -49,8 +31,11 @@ LEARN_REPLY_BUTTONS = [
         ("Torrent Download Bot🤖💖")
     ],
     [
-        ("Home 🔙"),
-        ("Youtube Video Download Bot🤖💖")
+        ("Telegrph Upload Bot🤖💖")
+    ],
+    [
+        ("Youtube Video Download Bot🤖💖"),
+        ("Home 🔙")
     ]
 ]
 
@@ -62,12 +47,14 @@ FEEDBACK_REPLY_BUTTONS = [
         ("Song Downloader Bot🤖💖")
     ],
     [
-        ("Torrent Downloader Bot🤖💖"),
+        ("Torrent Downloader Bot🤖💖")
+    ],
+    [
+
         ("Telegraph Uploader Bot🤖💖")
     ],
     [
-        ("Home 🔙"),
-        ("Youtube Video Downloader Bot🤖💖")
+        ("Home 🔙")
     ]
 ]
 
@@ -82,3 +69,5 @@ FINISH_FEEDBACK_BUTTONS = [
         ("Finish📩")
     ]
 ]
+
+# Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved

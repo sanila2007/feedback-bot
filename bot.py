@@ -305,7 +305,7 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: `11/21/2021`\n\n"
-                                      "Latest Version:  `v1.8.7`\n\n"
+                                      "Latest Version:  `v0.8.7`\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"

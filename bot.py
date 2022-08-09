@@ -25,6 +25,8 @@ bot = Client(
     bot_token=Config.BOT_TOKEN
 )
 
+
+
 @bot.on_inline_query()
 def inlinequery(client, inline_query):
     inline_query.answer(
@@ -247,8 +249,8 @@ async def command1(bot, message):
     try:
         await bot.send_message(Config.LOG_CHANNEL,
                                f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
-    except UsernameNotOccupied as error_start:
-        print("Unable to send the logs to the channel, may be an error in the username that given when deploying...")
+    except Exception as er:
+        print(f"Unable to send the logs to the channel.\n<i>Reason: {er}</i>")
 
 
 # Learn bots section
@@ -290,14 +292,20 @@ def reply_to_s_ong(bot, message):
     bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Youtube-Video-Downloader-Bot-07-09")
 
 
+@bot.on_message((filters.regex(pattern="Telegrph Upload Bot🤖💖")))
+def reply_to_s_ong(bot, message):
+    bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
+    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-Telegram-Telegraph-Uploader-Bot-08-09")
+
+
 # About bot section
 
 @bot.on_message(filters.regex(pattern="About Bot"))
 def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
-                                      "Created on: 11/21/2021\n\n"
-                                      "Latest Version:  v0.8.6\n\n"
+                                      "Created on: `11/21/2021`\n\n"
+                                      "Latest Version:  `v1.8.7`\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -310,14 +318,6 @@ def reply_to_AboutBot(bot, message):
 @bot.on_message(filters.regex(pattern="Contact 📞"))
 def reply_to_Contact(bot, message):
     bot.send_message(message.chat.id, messages.CONTACT_TEXT, reply_markup=ForceReply(message.chat.id))
-
-
-# About Developer
-
-@bot.on_message(filters.regex(pattern="About Developer"))
-def reply_to_About(bot, message):
-    bot.send_message(message.chat.id,
-                     "**<ins>About Developer</ins>**\n\n""❖ Name : Sanila Ranatunga\n\n""❖ Age : 15 Years (2022)\n\n""❖ Birthday : 09.01.2007\n\n""❖ From : Sri Lanka\n\n""❖ Skills : Programmer , Developer\n\n""❖ Ambition : Be a software engineer\n\n""❖ Languages : Python, HTML, CSS, JS\n\n❖ Still Learning : C++, Java")
 
 
 # Home
@@ -353,19 +353,6 @@ def reply_to_Feedback(bot, message):
     message.reply(
         text=text,
         reply_markup=reply_markup
-    )
-
-
-# Credits
-
-@bot.on_message(filters.regex(pattern="Credits"))
-def reply_to_Credits(bot, message):
-    text = messages.CREDITS_TEXT
-    reply_markup = ReplyKeyboardMarkup(buttons.HOME_BUTTON_CR, one_time_keyboard=False, resize_keyboard=True)
-    message.reply(
-        text=text,
-        reply_markup=reply_markup,
-        disable_web_page_preview=True
     )
 
 
@@ -414,83 +401,46 @@ def reply_to_rate_bots(bot, message):
     )
 
 
-RATING_BOT = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton("⭐", callback_data="one_star")
-        ],
-        [
-            InlineKeyboardButton("⭐⭐", callback_data="two_star")
-        ],
-        [
-            InlineKeyboardButton("⭐⭐⭐", callback_data="three_star")],
-        [
-            InlineKeyboardButton("⭐⭐⭐⭐", callback_data="four_star")
-
-        ],
-        [
-
-            InlineKeyboardButton("⭐⭐⭐⭐⭐", callback_data="five_star")
-        ]
-    ]
-)
-
-
 # Rating bots
 
 @bot.on_message(filters.regex(pattern="Assistant Bot"))
 def reply_to_rating_assistant(bot, message):
-    reply_markup = RATING_BOT
+    reply_markup = ratings.RATING_BOT_FEEDBACK_BOT
     bot.send_message(message.chat.id,
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
-    bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
-                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Torrent Bot"))
 def reply_to_rating_assistant(bot, message):
-    reply_markup = RATING_BOT
+    reply_markup = ratings.RATING_BOT_TORRENT
     bot.send_message(message.chat.id,
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
-    bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
-                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Youtube Bot"))
 def reply_to_rating_assistant(bot, message):
-    reply_markup = RATING_BOT
+    reply_markup = ratings.RATING_BOT_YOTUBE
     bot.send_message(message.chat.id,
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
-    bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
-                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Telegraph Bot"))
 def reply_to_rating_assistant(bot, message):
-    reply_markup = RATING_BOT
+    reply_markup = ratings.RATING_BOT_TELEGRAPH
     bot.send_message(message.chat.id,
                      f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                      reply_markup=reply_markup)
-    bot.send_message(Config.FEEDBACK_CHANNEL,
-                     f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
-                     protect_content=True)
 
 
 @bot.on_message(filters.regex(pattern="Song Bot"))
 async def reply_to_rating_assistant(bot, message):
-    reply_markup = RATING_BOT
+    reply_markup = ratings.RATING_BOT_SONG
     await bot.send_message(message.chat.id,
                            f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
                            reply_markup=reply_markup)
-    await bot.send_message(Config.FEEDBACK_CHANNEL,
-                           f"**New user entered rating area**\n\nUser - {message.from_user.first_name}\nUsername - @{message.chat.username}\nBot - {message.text}",
-                           protect_content=True)
 
 
 # Reporting area - Torrent downloader bot
@@ -558,9 +508,9 @@ def fbb(bot, message):
     try:
         bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet, protect_content=True,
                          reply_markup=ForceReply(message.chat.id))
-    except UsernameNotOccupied as e:
+    except Exception as e:
         bot.send_message(message.chat.id,
-                         "Oops!!\n\nError occurred while sending feedback to the admin. If you are the developer, check that you have entered exact usernames(channel or groups) when deploying.")
+                         f"**Oops!! error occurred while sending feedback to the admin.**\n\n<i>Reason: {e}</i> ")
 
 
 @bot.on_callback_query()
@@ -585,41 +535,261 @@ def callback_query(Client, CallbackQuery):
 
     if CallbackQuery.data == "one_star":
         e = CallbackQuery.edit_message_text(
-            "**Your ratings**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+            "**Bot - Feedback Bot(Sanila Assistant Bot)**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{e.text}",
-                         protect_content=True)
-
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
 
     elif CallbackQuery.data == "two_star":
         d = CallbackQuery.edit_message_text(
-            "**Your ratings**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+            "**Bot - Feedback Bot(Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{d.text}",
-                         protect_content=True)
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
 
     if CallbackQuery.data == "three_star":
         c = CallbackQuery.edit_message_text(
-            "**Your ratings**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+            "**Bot - Feedback Bot(Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{c.text}",
-                         protect_content=True)
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
 
     elif CallbackQuery.data == "four_star":
         b = CallbackQuery.edit_message_text(
-            "**Your ratings**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+            "**Bot - Feedback Bot(Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{b.text}",
-                         protect_content=True)
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
 
     if CallbackQuery.data == "five_star":
         a = CallbackQuery.edit_message_text(
-            "**Your ratings**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin.</i>\n\nThank you for your support."
+            "**Bot - Feedback Bot(Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
-        bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
-                         protect_content=True)
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    ## Telegraph Bot Ratings
+    elif CallbackQuery.data == "one_star_telegraph":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "two_star_telegraph":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "three_star_telegraph":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "four_star_telegraph":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin.  Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "five_star_telegraph":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    ## Song Downloader Ratings
+    elif CallbackQuery.data == "one_star_song":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Song Downloader**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "two_star_song":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "three_star_song":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "four_star_song":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "five_star_song":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    ## Torrent Downloader Ratings
+    elif CallbackQuery.data == "one_star_torrent":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Torrent Uploader**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "two_star_torrent":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "three_star_torrent":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "four_star_torrent":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "five_star_torrent":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    ## Youtube Video Downloader Ratings
+    elif CallbackQuery.data == "one_star_youtube":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐(1 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "two_star_youtube":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐(2 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "three_star_youtube":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐(3 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "four_star_youtube":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
+
+    elif CallbackQuery.data == "five_star_youtube":
+        f = CallbackQuery.edit_message_text(
+            "**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
+        )
+        try:
+            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+                             protect_content=True)
+        except Exception as error:
+            print(f"Unable to send ratings to the channel\n\nReason- {error}")
 
 
 print("Bot is alive📶✨")
 
 bot.run()
+
+# Copyright ©️ 2022 Sanila Ranatunga. All Rights Reserved

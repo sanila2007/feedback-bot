@@ -60,7 +60,7 @@ services:
 
 `Broadcast to user feedback`
 
-This feature will be available here soon on next updates.<br>
+This feature will be available here soon on next updates...<br>
 
 ```python
 "Admin message\n\nThanks for your feedback."

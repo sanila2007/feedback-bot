@@ -30,10 +30,10 @@ START_TEXT_CAPTION_TEXT = "This is a multi functional bot that can give & collec
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 
 CHANGELOG_TEXT = "**Changelog**\n\n" \
-                 "🆅0.8\n ⁕Added CAPTCHA /captcha\n ⁕Added facility to rate bots\n ⁕Added log channel (admin only)\n ⁕Instant view supports\n ⁕Added ForceReply\n ⁕Feedback improvements\n ⁕Stickers has been restricted\n ⁕Minor bug fixes\n\n  " \
-                 "🆅0.7\n ⁕Now you can't send feedbacks empty \n⁕Removed unnecessary features\n ⁕Improved feedback centre\n ⁕Improved report bugs centre\n ⁕Improved contact section and added features\n ⁕Improved changelog section\n ⁕Improvements in repository\n ⁕Minor bugs fixes\n\n " \
+                 "🆅1.8.0\n ⁕Added CAPTCHA /captcha\n ⁕Added facility to rate bots\n ⁕Added log channel (admin only)\n ⁕Instant view supports\n ⁕Added ForceReply\n ⁕Feedback improvements\n ⁕Stickers has been restricted\n ⁕Minor bug fixes\n\n  " \
+                 "🆅1.7.0\n ⁕Now you can't send feedbacks empty \n ⁕Removed unnecessary features\n ⁕Improved feedback centre\n ⁕Improved report bugs centre\n ⁕Improved contact section and added features\n ⁕Improved changelog section\n ⁕Improvements in repository\n ⁕Minor bugs fixes\n\n " \
                  "<a href=https://github.com/sanila2007/feedback-bot/blob/mai/release%20notes/release_notes.txt>see more...</a>\n\n" \
-                 "*Note: Every version releases aren't available here. Just major updates only. If ou want to get the minor releases too," \
+                 "*Note: Every version releases aren't available here. Just major updates only. If you want to get the minor releases," \
                  "you can check <a href=https://github.com/sanila2007/feedback-bot/releases>Releases</a>"
 
 SANILA_ASSISTANT_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/sanilaassistant_bot> Sanila's Assistant Bot</a>\n\n" \
@@ -57,9 +57,9 @@ YOUTUBE_VIDEO_DOWNLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t
                                 "◉ You will get answer for your feedback around <b><b>24hours.</b></b>"
 
 TELEGRAPH_UPLOADER_TEXT = "Reporting Area‼️\n\nBot = <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
-                                "◉ Type your report here and send it\n\n" \
-                                "◉ After you finish click <<**Finish📩**>>\n\n" \
-                                "◉ You will get answer for your feedback around <b><b>24hours.</b></b>"
+                          "◉ Type your report here and send it\n\n" \
+                          "◉ After you finish click <<**Finish📩**>>\n\n" \
+                          "◉ You will get answer for your feedback around <b><b>24hours.</b></b>"
 
 FEEDBACK_FINISH_TEXT = "Thanks for your feedback!\n\nYour valuable feedbacks help us to build our bots much friendly. When you sending your feedback please include a screenshot of it because it helps us to decide what is the error.\n\nIt usually takes about 48 hours to get back to you, please accept our apologies in advance for any reply that exceeds this time frame.\n\nFeedback Centre."
 

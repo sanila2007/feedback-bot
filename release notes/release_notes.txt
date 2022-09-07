@@ -1,6 +1,6 @@
 Note: Here only major releases available. If you want minor releases too check Releases
 
-v0.8 release notes
+v1.8 release notes
 
 ⁕Added CAPTCHA /captcha
 ⁕Added facility to rate bots
@@ -12,7 +12,7 @@ v0.8 release notes
 ⁕Minor bug fixes
   
 
-v0.7 release notes
+v1.7 release notes
 
 ⁕Now you can't send feedbacks empty
 ⁕Removed unnecessary features
@@ -24,7 +24,7 @@ v0.7 release notes
 ⁕Minor bugs fixes
 
 
-v0.6 release notes
+v1.6 release notes
 
 ⁕Improvements in Feedback Centre
 ⁕Fixed major problem in Contact Centre
@@ -33,7 +33,7 @@ v0.6 release notes
 ⁕Minor bugs fixes
 
 
-v0.5 release notes
+v1.5 release notes
 
 ⁕100% works with Inline & Reply KeyboardButtons
 ⁕Improved the feedback and bugs reporting section
@@ -44,29 +44,34 @@ v0.5 release notes
 ⁕Minor bug fixes
 
 
-v0.4 release notes
+v1.4 release notes
 
 ⁕Added InlineKeyboardButtons
 ⁕Added ReplyKeyboardButtons
 ⁕minor bug fixes
 
 
-v0.3 release notes
+v1.3 release notes
 
 ⁕Fixed errors in v0.2
 ⁕Changed the welcome msg
 ⁕Optimizations and bug fixes
 
 
-v0.2 release notes
+v1.2 release notes
 
 ⁕Changed the interface much attractive
 ⁕What's new changed to Changelog
 ⁕Minor bugs fixes
 
 
-v0.1 release notes
+v1.1 release notes
 
 ⁕Added Some Commands
 ⁕Made much easier to use
 ⁕Improved Chat Facilities
+
+v1.0 release notes
+
+⁕Created bot
+⁕Added feedback sending feature

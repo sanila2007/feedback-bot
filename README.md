@@ -120,7 +120,7 @@ FEEDBACK_CHANNEL
      
 <br>
 
-## What's new in this v0.8.0
+## What's new in this v1.8.0 (Old version)
 
 ● Added CAPTCHA /captcha<br>
 ● Added facility to rate bots<br>

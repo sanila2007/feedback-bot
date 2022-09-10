@@ -12,6 +12,6 @@ CAPTCHA_TEX_T = "Select the MOST SUITABLE EMOJI that you can see on ths picture"
 
 FAIL_CAPTCHA = "You failed!\n\nTry again /captcha"
 
-PASS_CAPTCHA = "You successfully completed captcha🎆\n\nYou are a human!"
+PASS_CAPTCHA = "You successfully completed captcha🎆\n\nYou are a human! /start"
 
 MULTY_FAIL = "❌You have ALREADY FAILED captcha but you can have a try again.\n\nReload /captcha"

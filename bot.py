@@ -514,13 +514,12 @@ def fbb(bot, message):
 
 @bot.on_callback_query()
 def callback_query(Client, CallbackQuery):
-    global a
     if CallbackQuery.data == "🧊":
         CallbackQuery.edit_message_text(
             captcha_text.PASS_CAPTCHA
         )
         try:
-            text = "Congratulations🎉🎉\n\nYou proved yourself that you are a human😋"
+            text = "Congratulations🎉🎉\nYou proved yourself that you are a human!"
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error_pass:
             bot.answer_callback_query(CallbackQuery.id, text=f"Error occurred!!\n\n{error_pass}", show_alert=True)
@@ -529,8 +528,7 @@ def callback_query(Client, CallbackQuery):
         CallbackQuery.edit_message_text(
             captcha_text.MULTY_FAIL,
             reply_markup=InlineKeyboardMarkup(captcha_buttons.RELOAD_CAPTCHA)
-        ),
-
+        )
     elif CallbackQuery.data == "📩" or "🔥" or "🌭" or "🚑" or "🚡" or "💡" or "🔎" or "📈" or "🎆" or "🎎" or "🍧" or "⛑" or "🪀" or "🧸":
         CallbackQuery.edit_message_text(
             captcha_text.FAIL_CAPTCHA,
@@ -544,7 +542,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{e.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -556,7 +554,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{d.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -568,7 +566,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{c.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -580,7 +578,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{b.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -592,7 +590,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -606,7 +604,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -618,7 +616,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -630,7 +628,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -642,7 +640,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -654,7 +652,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -668,7 +666,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -681,7 +679,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -694,7 +692,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -707,7 +705,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -720,7 +718,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -734,7 +732,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel!!! {error}")
@@ -747,7 +745,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -760,7 +758,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -773,7 +771,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -786,7 +784,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -800,7 +798,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -813,7 +811,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -826,7 +824,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -839,7 +837,7 @@ def callback_query(Client, CallbackQuery):
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
@@ -851,7 +849,7 @@ def callback_query(Client, CallbackQuery):
         try:
             bot.send_message(Config.FEEDBACK_CHANNEL, f"**New user has been rated a bot**\n\n{f.text}",
                              protect_content=True)
-            text = "Thanks for your collaboration to make our bots more efficient. These ratings have been shared with the admin.\n\nThank you!!"
+            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
 
         except Exception as error:

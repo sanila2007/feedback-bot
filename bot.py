@@ -17,6 +17,7 @@ from pyrogram import Client, filters
 from config import Config
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UsernameNotOccupied
+import requests as re
 
 bot = Client(
     "bot",
@@ -24,6 +25,12 @@ bot = Client(
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN
 )
+
+api = f"https://api.telegram.org/bot{Config.BOT_TOKEN}GetChatMemberCount"
+chat_id = "@telegram"
+data = {"chat_id": chat_id}
+res = re.post(api, data)
+number_users = print(res.json())
 
 
 @bot.on_inline_query()
@@ -35,7 +42,8 @@ def inlinequery(client, inline_query):
                 description="A telegram bot which can upload media such as images, videos & animations to the telegra.ph",
                 thumb_url="https://telegra.ph/file/8edc5c1131bcc8a691a3c.jpg",
                 input_message_content=InputTextMessageContent(
-                    "**Telegraph Uploader**\n\nA telegram bot which can upload media such as images, videos & animations to the telegra.ph"
+                    "**Telegraph Uploader**\n\nA telegram bot which can upload media such as images, videos & animations to the telegra.ph",
+
                 ),
                 url="https://t.me/telegraph200_bot",
                 reply_markup=InlineKeyboardMarkup(
@@ -234,7 +242,7 @@ INLINE_BB = InlineKeyboardMarkup(
 
 @bot.on_message(filters.command("start") & filters.private)
 async def command1(bot, message):
-    text = f"Hello **{message.from_user.first_name}!**\n\n" + messages.START_TEXT_CAPTION_TEXT
+    text = f"Hello **{message.from_user.first_name}!**\n\n" + messages.START_TEXT_CAPTION_TEXT + f"\n\nUsers - {number_users}"
     reply_markup = INLINE_BB
     await message.reply(
         text=text,
@@ -304,7 +312,7 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: `11/21/2021`\n\n"
-                                      "Latest Version:  `v1.8.9`\n\n"
+                                      "Latest Version:  `v1.9.0`\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -493,7 +501,7 @@ def captch(bot, message):
     )
 
 
-@bot.on_message(filters.reply)
+@bot.on_message(filters.reply & filters.private)
 def fbb(bot, message):
     bot.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
     tet = f"**<u>Feedback Information</u>**\n\nMessage - `{message.text}`\nWord count - {len(message.text.split())}\nPosted by - {message.from_user.first_name}\nUser ID - {message.from_user.id}\nUsername - @{message.chat.username}\nLanguage - {message.from_user.language_code}\nChat type - {message.chat.type}\nPosted date - {date_info.POSTED_DATE}\nPosted time - {date_info.POSTED_TIME}\nDate of reply - {date_info.DATE_OF_REPLY}\n\n<i>*Note: Add more feedbacks or click finish</i>"
@@ -504,12 +512,28 @@ def fbb(bot, message):
         quote=True,
         protect_content=True
     )
+    global vaar
+    vaar = message.chat.username
     try:
-        bot.send_message(Config.FEEDBACK_CHANNEL, "**New feedback available!**\n\n" + tet, protect_content=True,
+        bot.send_message(Config.FEEDBACK_GROUP, "**New feedback available!**\n\n" + tet, protect_content=True,
                          reply_markup=ForceReply(message.chat.id))
     except Exception as e:
         bot.send_message(message.chat.id,
                          f"**Oops!! error occurred while sending feedback to the admin.**\n\n<i>Reason: {e}</i> ")
+
+    bot.send_message(Config.FEEDBACK_GROUP, input(f"Query: {message.text}"))
+
+
+@bot.on_message(filters.group & filters.reply & filters.user(Config.ADMIN))
+def do_nothing(bot, message):
+    try:
+        bot.send_message(vaar,
+                         f"**Admin message** #admin_msg:\n➖➖➖➖➖➖➖➖➖➖\n{message.text}\n\n~Powered by <a href=https://github.com/sanila2007/Feedback-Bot>Feedback Bot</a>",
+                         disable_web_page_preview=True, protect_content=True)
+        bot.send_message(Config.FEEDBACK_GROUP, f"Your reply have been sent to the user successfully.",
+                         protect_content=True)
+    except Exception as error_nothing:
+        print(f"Error occurred: {error_nothing}")
 
 
 @bot.on_callback_query()
@@ -540,7 +564,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Feedback Bot (Sanila Assistant Bot)**\n\nGiven Stars - ⭐(1 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{e.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{e.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -552,7 +576,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Feedback Bot (Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐(2 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{d.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{d.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -564,7 +588,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Feedback Bot (Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐⭐(3 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{c.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{c.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -576,7 +600,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Feedback Bot (Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{b.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{b.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -588,7 +612,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Feedback Bot (Sanila Assistant Bot)**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{a.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -601,7 +625,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐(1 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -614,7 +638,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐(2 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -626,7 +650,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐⭐(3 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -638,7 +662,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin.  Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -650,7 +674,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Telegraph Uploader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
@@ -663,7 +687,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Song Downloader**\n\nGiven Stars - ⭐(1 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -676,7 +700,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐(2 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -689,7 +713,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐⭐(3 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -702,7 +726,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -715,7 +739,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Song Downloader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -729,7 +753,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Torrent Uploader**\n\nGiven Stars - ⭐(1 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -742,7 +766,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐(2 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -755,7 +779,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐⭐(3 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -768,7 +792,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -781,7 +805,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Torrent Uploader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -795,7 +819,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐(1 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -808,7 +832,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐(2 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -821,7 +845,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐(3 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -834,7 +858,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
                              protect_content=True)
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
@@ -847,7 +871,7 @@ def callback_query(Client, CallbackQuery):
             f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
         )
         try:
-            bot.send_message(Config.FEEDBACK_CHANNEL, f"**New user has been rated a bot**\n\n{f.text}",
+            bot.send_message(Config.FEEDBACK_GROUP, f"**New user has been rated a bot**\n\n{f.text}",
                              protect_content=True)
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)

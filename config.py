@@ -14,6 +14,7 @@ class Config(object):
     API_ID = int(os.environ.get("API_ID", 12345678))
     API_HASH = os.environ.get("API_HASH")
     BOT_TOKEN = os.environ.get("BOT_TOKEN")
+    ADMIN = os.environ.get("ADMIN")
     LOG_CHANNEL = os.environ.get("LOG_CHANNEL")
-    FEEDBACK_CHANNEL = os.environ.get("FEEDBACK_CHANNEL")
+    FEEDBACK_GROUP = os.environ.get("FEEDBACK_CHANNEL")
 

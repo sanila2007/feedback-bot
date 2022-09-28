@@ -1,5 +1,17 @@
 Note: Here only major releases available. If you want minor releases too check Releases
 
+v1.9 release notes
+
+⁕Added possibility to broadcast replies to the users
+⁕Broadcast replies anonymously
+⁕Added possibility to broadcast replies only by the admin in the group. Other members would not be able to reply.
+⁕No one can copy feedbacks from feedback group
+⁕Getting screenshots is restricted in the both group and bot
+     -Note: feedback messages only, group messages can read anyone but cannot share those
+⁕Redesigned texts
+⁕And other minor bug fixes
+
+
 v1.8 release notes
 
 ⁕Added CAPTCHA /captcha

@@ -20,18 +20,14 @@ LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
 START_TEXT_CAPTION_TEXT = "This is a multi functional bot that can give & collect feedbacks from" \
                           " users and broadcast replies to them.\n\n" \
-                          "Some of my bots,\n" \
-                          "▬▬▬ ◈ <a href=https://t.me/songdownload597_bot>Song Download Bot</a>\n" \
-                          "▬▬▬ ◈ <a href=https://t.me/torrentdownloader88_bot>Torrent Download Bot</a>\n" \
-                          "▬▬▬ ◈ <a href=https://t.me/youtubevideodownloader45_bot>Youtube Vide Download Bot</a>\n" \
-                          "▬▬▬ ◈ <a href=https://t.me/telgeraph200_bot>Telegraph Uploader Bot</a>\n\n" \
-                          "<i>*Note:</i> When sending feedbacks through this bot **DO NOT SEND FEEDBACKS DIRECTLY** because those aren't accepted. Therefore please use **FEEDBACK OR CONTACT SECTIONS!!**\n\nUse `@sanilaassistant_bot` for get the BOT LIST in inline mode."
+                          "⚠️Warning - Heroku has been stopped giving free dyno bundles. Therefore the bots may be unstable for some days. We appreciate your patience in these kinds of situations.\n\n" \
+                          "Use `@sanilaassistant_bot` for get the BOT LIST in inline mode."
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 
-CHANGELOG_TEXT = "**Changelog**\n\n" \
-                 "🆅1.8.0\n ⁕Added CAPTCHA /captcha\n ⁕Added facility to rate bots\n ⁕Added log channel (admin only)\n ⁕Instant view supports\n ⁕Added ForceReply\n ⁕Feedback improvements\n ⁕Stickers has been restricted\n ⁕Minor bug fixes\n\n  " \
-                 "🆅1.7.0\n ⁕Now you can't send feedbacks empty \n ⁕Removed unnecessary features\n ⁕Improved feedback centre\n ⁕Improved report bugs centre\n ⁕Improved contact section and added features\n ⁕Improved changelog section\n ⁕Improvements in repository\n ⁕Minor bugs fixes\n\n " \
+CHANGELOG_TEXT = "<u>**Changelog**</u>\n\n" \
+                 "🆅1.9.0\n **-New features**\n ⁕Added possibility to broadcast replies to the users\n ⁕Broadcast replies anonymously\n ⁕Added possibility to broadcast replies only by the admin in the group. Other members would not be able to reply.\n\n **-Security improvements**\n ⁕No one can copy feedbacks from feedback group\n ⁕Getting screenshots is restricted in the both group and bot\n<i>*Note: feedback messages only, group messages can read anyone but cannot share those</i>\n\n **-Improved features**\n ⁕Redesigned texts\n ⁕And other minor bug fixes\n\n" \
+                 "🆅1.8.0\n **-New features**\n ⁕Added CAPTCHA /captcha\n ⁕Added facility to rate bots\n ⁕Added log channel (admin only)\n ⁕Instant view supports\n ⁕Added ForceReply\n\n **-Improved features**\n ⁕Feedback improvements\n ⁕Stickers has been restricted\n ⁕Minor bug fixes\n\n  " \
                  "<a href=https://github.com/sanila2007/feedback-bot/blob/mai/release%20notes/release_notes.txt>see more...</a>\n\n" \
                  "*Note: Every version releases aren't available here. Just major updates only. If you want to get the minor releases," \
                  "you can check <a href=https://github.com/sanila2007/feedback-bot/releases>Releases</a>"

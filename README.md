@@ -110,7 +110,7 @@ BOT_TOKEN
 LOG_CHANNEL
 ```
 ```
-FEEDBACK_CHANNEL
+FEEDBACK_GROUP
 ``` 
 ```
 ADMIN
@@ -147,7 +147,7 @@ ADMIN
 ● Redesigned texts<br>
 ● Minor bug fixes<br>
 
-<a href="https://github.com/sanila2007/feedback-bot/blob/mai/release%20notes/release_notes.txt">Read more...</a>
+<a href="https://github.com/sanila2007/feedback-bot/releases">Read more...</a>
 
   
    

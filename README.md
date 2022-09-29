@@ -37,7 +37,9 @@ $$ |   \$$$$$$$\ \$$$$$$$\ \$$$$$$$ |$$$$$$$  |\$$$$$$$ |\$$$$$$$\ $$ | \$$\    
 2. `API_HASH` : Telegram API_HASH, get it from my.telegram.org/apps
 3. `BOT_TOKEN` : A Valid Telegram Bot Token, get it from @Botfather
 4. `LOG_CHANNEL` : Create a Telegram channel and enter the username 
-5. `FEEDBACK_CHANNEL` : Create a Telegram channel and enter the username
+5. `FEEDBACK_GROUP` : Create a Telegram group and enter the username
+6. `ADMIN` : Username of the admin.
+> Username that you provide must be correct becasue it needs to broadcast replies to the users.
 <br>
 
 ## Learn more about this repository
@@ -66,16 +68,19 @@ services:
       API_ID: $API_ID
       BOT_TOKEN: $BOT_TOKEN
       LOG_CHANNEL: $LOG_CHANNEL
-      FEEDBACK_CHANEL: $FEEDBACK_CHANNEL
+      FEEDBACK_GROUP: $FEEDBACK_CHANNEL
+      ADMIN: $ADMIN
 ```
 <br>
 
 `Broadcast to user feedback`
 
-This feature will be available here soon on next updates...<br>
+You can broadcast replies to the user feedbacks using this feature. For that you need to enter the username of the admin accurately when deploying this bot.<br>
 
 ```python
-"This feature will be available here soon on next major update"
+Admin message
+-------------
+Thank you for your feedbacks.
 ```
 
 `Captcha`
@@ -107,6 +112,9 @@ LOG_CHANNEL
 ```
 FEEDBACK_CHANNEL
 ``` 
+```
+ADMIN
+```
   
 ## Deployment Methods
 
@@ -120,15 +128,23 @@ FEEDBACK_CHANNEL
      
 <br>
 
-## What's new in this v1.8.0 (An old version)
+## What's new in this v1.9.0 (Latest version)
 
-● Added CAPTCHA /captcha<br>
-● Added facility to rate bots<br>
-● Added log channel (admin only)<br>
-● Instant view supports<br>
-● Added ForceReply<br>
-● Feedback improvements<br>
-● Stickers have been restricted<br>
+> Added features
+
+● Added an option to broadcast replies to the users<br>
+● Broadcast replies anonymously<br>
+● Added an option to broadcast replies only by the admin in the group. Other members would not be able to reply<br>
+
+> Security improvements
+
+● No one can copy feedback from the feedback group<br>
+● Getting screenshots are restricted in both group and bot<br>
+● Forwarding feedbacks are restricted<br>
+
+> Improved features
+
+● Redesigned texts<br>
 ● Minor bug fixes<br>
 
 <a href="https://github.com/sanila2007/feedback-bot/blob/mai/release%20notes/release_notes.txt">Read more...</a>

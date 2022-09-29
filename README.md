@@ -165,7 +165,7 @@ ADMIN
 ## Note: <br>
 
 <pre>I don't officially support forks / Clones for this feedback bot,
-So don't tag admins for errors of your deploy/code, 
+Therefore don't tag admins for errors of your deploy/code, 
 If any errors you should fix it yourself!!</pre>
 
 

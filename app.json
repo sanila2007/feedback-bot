@@ -28,9 +28,13 @@
             "description": "Create a public channel and enter the username here. NOT THE LINK MUST BE THE USERNAME!!",
             "required": true
         },
-        "FEEDBACK_CHANNEL": {
-            "description": "Create a public channel and enter the username here. NOT THE LINK MUST BE THE USERNAME!! (optional)",
-            "required": false
+        "FEEDBACK_GROUP": {
+            "description": "Create a public group and enter the username here. NOT THE LINK MUST BE THE USERNAME!!",
+            "required": true
+        },
+        "ADMIN": {
+            "description": "Enter the username of the admin",
+            "required": true
         }
     },
     "formation": {

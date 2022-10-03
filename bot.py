@@ -17,7 +17,6 @@ from pyrogram import Client, filters
 from config import Config
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UsernameNotOccupied
-import requests as re
 
 bot = Client(
     "bot",
@@ -25,13 +24,6 @@ bot = Client(
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN
 )
-
-api = f"https://api.telegram.org/bot{Config.BOT_TOKEN}GetChatMemberCount"
-chat_id = "@telegram"
-data = {"chat_id": chat_id}
-res = re.post(api, data)
-number_users = print(res.json())
-
 
 @bot.on_inline_query()
 def inlinequery(client, inline_query):
@@ -242,7 +234,7 @@ INLINE_BB = InlineKeyboardMarkup(
 
 @bot.on_message(filters.command("start") & filters.private)
 async def command1(bot, message):
-    text = f"Hello **{message.from_user.first_name}!**\n\n" + messages.START_TEXT_CAPTION_TEXT + f"\n\nUsers - {number_users}"
+    text = f"Hello **{message.from_user.first_name}!**\n\n" + messages.START_TEXT_CAPTION_TEXT
     reply_markup = INLINE_BB
     await message.reply(
         text=text,

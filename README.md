@@ -128,7 +128,7 @@ ADMIN
      
 <br>
 
-## What's new in this v1.9.0 (Latest version)
+## What's new in this v1.9.0 (Latest version - v1.9.1)
 
 > Added features
 

@@ -18,12 +18,14 @@ from config import Config
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UsernameNotOccupied
 
+
 bot = Client(
     "bot",
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN
 )
+
 
 @bot.on_inline_query()
 def inlinequery(client, inline_query):
@@ -512,8 +514,6 @@ def fbb(bot, message):
     except Exception as e:
         bot.send_message(message.chat.id,
                          f"**Oops!! error occurred while sending feedback to the admin.**\n\n<i>Reason: {e}</i> ")
-
-    bot.send_message(Config.FEEDBACK_GROUP, input(f"Query: {message.text}"))
 
 
 @bot.on_message(filters.group & filters.reply & filters.user(Config.ADMIN))

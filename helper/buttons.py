@@ -34,7 +34,6 @@ LEARN_REPLY_BUTTONS = [
         ("Telegrph Upload Bot🤖💖")
     ],
     [
-        ("Youtube Video Download Bot🤖💖"),
         ("Home 🔙")
     ]
 ]

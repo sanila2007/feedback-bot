@@ -18,7 +18,6 @@ from config import Config
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UsernameNotOccupied
 
-
 bot = Client(
     "bot",
     api_id=Config.API_ID,
@@ -26,6 +25,7 @@ bot = Client(
     bot_token=Config.BOT_TOKEN
 )
 
+VERSION = "v1.9.2"
 
 @bot.on_inline_query()
 def inlinequery(client, inline_query):
@@ -249,9 +249,9 @@ async def command1(bot, message):
     )
     try:
         await bot.send_message(Config.LOG_CHANNEL,
-                               f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
+                             f"New User!\n\n◉ User - {message.from_user.first_name}\n◉ Joined time - {date_info.POSTED_TIME}\n◉ Joined date - {date_info.POSTED_DATE}")
     except Exception as er:
-        print(f"Unable to send the logs to the channel.\n<i>Reason: {er}</i>")
+        print(f"Unable to send the logs to the channel.\nReason: {er}")
 
 
 # Learn bots section
@@ -278,25 +278,29 @@ async def restric_sticker(bot, message):
 @bot.on_message(filters.regex(pattern="Song Download Bot🤖💖"))
 def reply_to_utube(bot, message):
     bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
-    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-Song-Downloader-Bot-07-09")
+    bot.send_message(message.chat.id,
+                     "<a href=https://telegra.ph/How-to-use-Song-Downloader-Bot-07-09>How to use Song Downloader Bot?</a>")
 
 
 @bot.on_message(filters.regex(pattern="Torrent Download Bot🤖💖"))
 def reply_to_s_on(bot, message):
     bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
-    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Torrent-Downloader-Bot-07-09")
+    bot.send_message(message.chat.id,
+                     "<a href=https://telegra.ph/How-to-use-the-Torrent-Downloader-Bot-07-09>How to use Torrent Downloader Bot?</a>")
 
 
 @bot.on_message((filters.regex(pattern="Youtube Video Download Bot🤖💖")))
 def reply_to_s_ong(bot, message):
     bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
-    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-the-Youtube-Video-Downloader-Bot-07-09")
+    bot.send_message(message.chat.id,
+                     "<a href=https://telegra.ph/How-to-use-the-Youtube-Video-Downloader-Bot-07-09>How to use YouTube Video Download Bot?</a>")
 
 
 @bot.on_message((filters.regex(pattern="Telegrph Upload Bot🤖💖")))
 def reply_to_s_ong(bot, message):
     bot.send_chat_action(message.chat.id, enums.ChatAction.UPLOAD_DOCUMENT)
-    bot.send_message(message.chat.id, "https://telegra.ph/How-to-use-Telegram-Telegraph-Uploader-Bot-08-09")
+    bot.send_message(message.chat.id,
+                     "<a href=https://telegra.ph/How-to-use-Telegram-Telegraph-Uploader-Bot-08-09>How to use Telegraph uploader Bot?</a>")
 
 
 # About bot section
@@ -306,7 +310,7 @@ def reply_to_AboutBot(bot, message):
     bot.send_message(message.chat.id, "<ins>**About Bot**</ins>\n\n"
                                       "Name: <a href=https://t.me/sanilaassistant_bot>Sanila's Assistant Bot</a>\n\n"
                                       "Created on: `11/21/2021`\n\n"
-                                      "Latest Version:  `v1.9.1`\n\n"
+                                      f"Latest Version:  `{VERSION}`\n\n"
                                       "Language: <a href=www.python.org>Python</a>\n\n"
                                       "Framework: <a href=https://docs.pyrogram.org/>Pyrogram</a>\n\n"
                                       "Server: <a href=https://heroku.com>Heroku</a>\n\n"
@@ -420,14 +424,6 @@ def reply_to_rating_assistant(bot, message):
                      reply_markup=reply_markup)
 
 
-@bot.on_message(filters.regex(pattern="Youtube Bot"))
-def reply_to_rating_assistant(bot, message):
-    reply_markup = ratings.RATING_BOT_YOTUBE
-    bot.send_message(message.chat.id,
-                     f"How many stars would you like to give to **{message.text}**??\n\n<i>*Note - These ratings will be reset after you rate but these ratings will share with the admin(developer)</i>",
-                     reply_markup=reply_markup)
-
-
 @bot.on_message(filters.regex(pattern="Telegraph Bot"))
 def reply_to_rating_assistant(bot, message):
     reply_markup = ratings.RATING_BOT_TELEGRAPH
@@ -451,19 +447,6 @@ async def reply_to_Torrent(bot, message):
     reply_markup = ForceReply(message.chat.id)
     text = messages.TORRENT_DOWNLOADER_TEXT
     await message.reply(
-        text=text,
-        reply_markup=reply_markup,
-        disable_web_page_preview=True
-    )
-
-
-# Reporting area - Youtube video downloader bot
-
-@bot.on_message(filters.regex(pattern="Youtube Video Downloader Bot"))
-def reply_to_Youtube(bot, message):
-    text = messages.YOUTUBE_VIDEO_DOWNLOADER_TEXT
-    reply_markup = ForceReply(message.chat.id)
-    message.reply(
         text=text,
         reply_markup=reply_markup,
         disable_web_page_preview=True
@@ -532,7 +515,8 @@ def do_nothing(bot, message):
 def callback_query(Client, CallbackQuery):
     if CallbackQuery.data == "🧊":
         CallbackQuery.edit_message_text(
-            captcha_text.PASS_CAPTCHA
+            captcha_text.PASS_CAPTCHA,
+            reply_markup=ReplyKeyboardMarkup(buttons.REPLY_BUTTONS, one_time_keyboard=False, resize_keyboard=True)
         )
         try:
             text = "Congratulations🎉🎉\nYou proved yourself that you are a human!"
@@ -802,72 +786,6 @@ def callback_query(Client, CallbackQuery):
 
             text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
             bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
-        except Exception as error:
-            print(f"Unable to send ratings to the channel\n\nReason- {error}")
-
-    ## Youtube Video Downloader Ratings--------------------------------------------------------------------------------
-    elif CallbackQuery.data == "one_star_youtube":
-        f = CallbackQuery.edit_message_text(
-            f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐(1 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
-        )
-        try:
-            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
-                             protect_content=True)
-
-            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
-            bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
-        except Exception as error:
-            print(f"Unable to send ratings to the channel\n\nReason- {error}")
-
-    elif CallbackQuery.data == "two_star_youtube":
-        f = CallbackQuery.edit_message_text(
-            f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐(2 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
-        )
-        try:
-            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
-                             protect_content=True)
-
-            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
-            bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
-        except Exception as error:
-            print(f"Unable to send ratings to the channel\n\nReason- {error}")
-
-    elif CallbackQuery.data == "three_star_youtube":
-        f = CallbackQuery.edit_message_text(
-            f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐(3 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
-        )
-        try:
-            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
-                             protect_content=True)
-
-            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
-            bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
-        except Exception as error:
-            print(f"Unable to send ratings to the channel\n\nReason- {error}")
-
-    elif CallbackQuery.data == "four_star_youtube":
-        f = CallbackQuery.edit_message_text(
-            f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐⭐(4 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
-        )
-        try:
-            bot.send_message(Config.FEEDBACK_GROUP, f"**<u>New user has been rated a bot</u>**\n\n{f.text}",
-                             protect_content=True)
-
-            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
-            bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
-        except Exception as error:
-            print(f"Unable to send ratings to the channel\n\nReason- {error}")
-
-    elif CallbackQuery.data == "five_star_youtube":
-        f = CallbackQuery.edit_message_text(
-            f"**Bot - Youtube Video Downloader**\n\nGiven Stars - ⭐⭐⭐⭐⭐(5 star)\nUser - {CallbackQuery.from_user.first_name} {CallbackQuery.from_user.last_name}\nUsername - @{CallbackQuery.from_user.username}\n\n<i>*Your ratings have been sent to the admin. Thank you!</i>"
-        )
-        try:
-            bot.send_message(Config.FEEDBACK_GROUP, f"**New user has been rated a bot**\n\n{f.text}",
-                             protect_content=True)
-            text = "Thanks for your collaboration❤\n\nThese ratings help us a lot to make our bots more efficient. These ratings have been shared with the admin.\n\nFeedback Bot."
-            bot.answer_callback_query(CallbackQuery.id, text=text, show_alert=True)
-
         except Exception as error:
             print(f"Unable to send ratings to the channel\n\nReason- {error}")
 

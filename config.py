@@ -18,3 +18,4 @@ class Config(object):
     LOG_CHANNEL = os.environ.get("LOG_CHANNEL")
     FEEDBACK_GROUP = os.environ.get("FEEDBACK_GROUP")
 
+

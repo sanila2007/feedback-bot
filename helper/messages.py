@@ -5,7 +5,6 @@
 # Read GNU General Public License v3.0: https://github.com/sanila2007/feedback-bot/blob/mai/LICENSE
 # Don't forget to follow github.com/sanila2007 because I'm doing these things for free and open source
 # Star and fork and enjoy!
-from plugins import quotes_text
 
 FEEDBACK_REPLY_TEXT = "First please select a bot!!👮"
 
@@ -17,8 +16,7 @@ LEARN_TEXT = "Please select the bot that you want to learn!!👨‍🏫"
 
 START_TEXT_CAPTION_TEXT = "This is a multi functional bot that can give & collect feedbacks from" \
                           " users and broadcast replies to them.\n\n" \
-                          "⚠️Warning - Heroku has been stopped giving free dyno bundles. Therefore the bots may be unstable for some days. We appreciate your patience in these kinds of situations.\n\n" \
-                          f"Try Captcha: /captcha\n\n{quotes_text.GENERATED_QUOTE}"
+                          f"Try Captcha: /captcha"
 
 REPORT_BUGS_TEXT = "Please select a bot!!👮"
 
